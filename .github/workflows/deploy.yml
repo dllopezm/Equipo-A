@@ -1,0 +1,24 @@
+name: Desplegar apartado web a Neocities
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'pagina-web/**' 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del código
+      uses: actions/checkout@v4
+
+    - name: Desplegar archivos a Neocities
+      uses: bcomnes/deploy-to-neocities@v3
+      with:
+        api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
+        neocities_secret_output: false
+        dist_dir: pagina-web
+        cleanup: false 
