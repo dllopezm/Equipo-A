@@ -3,7 +3,7 @@ name: Deploy to Neocities
 on:
   push:
     branches:
-      - main
+      - Proyecto-0
 
 jobs:
   deploy:
