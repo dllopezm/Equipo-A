@@ -1,1 +1,1 @@
-Este repositorio contendrá el conjunto de proyectos elaborados por el Equipo A en 1º de Administración de Sistemas Informáticos en Red, del Campus Digital de FP Río Ebro. La web que utilizaremos como reflejo del trabajo realizado será https://lfalon.neocities.org/proyecto0/canvas.
+Este repositorio contendrá el conjunto de proyectos elaborados por el Equipo A en 1º de Administración de Sistemas Informáticos en Red, del Campus Digital de FP Río Ebro. La web que utilizaremos como reflejo del trabajo realizado será https://lfalon.neocities.org/index.html.
