@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inventario de componentes del ordenador Equipo-A">
+    <title>Inventario | Equipo-A</title>
+    <link rel="stylesheet" href="../css/proyecto.css">
+</head>
+
+<body>
+
+    <!-- INTRODUCCIÓN ANIMADA -->
+    <aside class="intro-screen" aria-label="Presentación del inventario">
+        <section class="intro-content">
+            <img class="intro-logo" src="../img/CD.png" alt="Logo del Campus Digital">
+            <p class="intro-equipo">EQUIPO-A</p>
+            <h1>INVENTARIO</h1>
+            <p class="intro-subtitle">Inventorio de componentes</p>
+            <span class="intro-line" aria-hidden="true"></span>
+        </section>
+    </aside>
+
+    <!-- CABECERA PRINCIPAL -->
+    <header class="site-header" id="inicio">
+        <section class="header-content">
+            <img class="header-logo" src="../img/CD.png" alt="Logo del Campus Digital">
+
+            <section class="header-text">
+                <p class="header-equipo">EQUIPO-A</p>
+                <h1>INVENTARIO ORDENADOR EQUIPO-A</h1>
+                <p class="header-subtitle">
+                    Inventario de componentes y características del equipo
+                </p>
+            </section>
+        </section>
+    </header>
+
+    <!-- NAVEGACIÓN QUE PERMANECE VISIBLE AL DESPLAZARSE -->
+    <nav class="site-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#componentes">Componentes</a>
+        <a href="#informacion">Información</a>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="inventory-area">
+
+        <!-- INTEGRANTES DEL EQUIPO -->
+        <section class="team-section" aria-labelledby="team-title">
+            <h2 id="team-title">Equipo de trabajo</h2>
+
+            <ul class="team-list">
+                <li>LORENZO FALO NUEZ</li>
+                <li>DAVID LANZAROTE LÓPEZ</li>
+                <li>ÁNGEL ALBA ENATARRIAGA</li>
+                <li>ROBERT ALEXANDRU MAICAN</li>
+            </ul>
+        </section>
+
+        <!-- TABLA DE COMPONENTES -->
+        <section id="componentes" aria-labelledby="components-title">
+            <h2 id="components-title" class="section-title">Componentes</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Componentes</th>
+                        <th scope="col">Referencia</th>
+                        <th scope="col">Características</th>
+                        <th scope="col">Imagen</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- PROCESADOR -->
+                    <tr>
+                        <th scope="row">CPU-GPU integrada</th>
+                        <td>AMD Athlon 3000G with Radeon Vega Graphics</td>
+                        <td>
+                            <ul>
+                                <li>Velocidad máxima de memoria 2667 MHz</li>
+                                <li>Canales de memoria 2</li>
+                                <li>Frecuencia de gráficos 1000 MHz</li>
+                                <li>N.° de núcleos de CPU 2</li>
+                                <li>N.° de subprocesos 4</li>
+                                <li>N.° de núcleos de GPU 3</li>
+                                <li>Paquete AM4</li>
+                                <li>
+                                    Compatible con SO:
+                                    <ul>
+                                        <li>Windows 10 edición de 64·bits</li>
+                                        <li>RHEL x86 edición de 64·bits</li>
+                                        <li>Ubuntu x86 edición de 64·bits</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="https://www.pccomponentes.com/procesador-amd-athlon-3000g-2-nucleos-3-5-ghz-graficos-integrados-radeon-vega-3">
+                                <img src="../img/AMD.jpg" alt="Procesador AMD Athlon 3000G">
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- MEMORIA RAM -->
+                    <tr>
+                        <th scope="row">RAM</th>
+                        <td>20406479</td>
+                        <td>
+                            <ul>
+                                <li>Velocidad → 3200 MHz</li>
+                                <li>Latencia → CL 16-20-20</li>
+                                <li>Capacidad → 8 GB</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="https://www.pccomponentes.com/adata-xpg-spectrix-d50-rgb-ddr4-3200mhz-pc4-25600-16gb-2x8gb-cl16-gris-tungsteno">
+                                <img src="../img/R.jpg" alt="Memoria RAM de 8 GB a 3200 MHz">
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- PLACA BASE -->
+                    <tr>
+                        <th scope="row">PLACA BASE</th>
+                        <td>GIGABYTE A520M K V2</td>
+                        <td>
+                            <ul>
+                                <li>Tipos de memoria compatibles: DDR4-SDRAM</li>
+                                <li>Canales de memoria 2</li>
+                                <li>Número de ranuras de memoria: 2</li>
+                                <li>Tipos de unidades de almacenamiento admitidas: HDD &amp; SSD</li>
+                                <li>Interfaces de disco de almacenamiento soportados: M.2, SATA III</li>
+                                <li>Número de unidades de almacenamiento compatibles: 5</li>
+                                <li>Ranuras x1 PCI Express: 1</li>
+                                <li>Ranuras x16 PCI Express: 1</li>
+                                <li>Número de ranuras M.2 (M): 1</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="https://www.pccomponentes.com/gigabyte-a520m-k-v2?s_kwcid=AL!14405!3!!!!x!!&gad_source=1&gad_campaignid=22157318807&gclid=Cj0KCQjwzsjVBhC3ARIsALnMv4mJNDlITyvs6sNuufTQsc3kCy1njttGaSU18Z7v3v2km6e8kxgJuUwaAp7AEALw_wcB">
+                                <img src="../img/PLACA BASE.jpg" alt="Placa base GIGABYTE A520M K V2">
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- FUENTE DE ALIMENTACIÓN -->
+                    <tr>
+                        <th scope="row">FUENTE ALIMENTACIÓN</th>
+                        <td>TACENS ANIMA APSI500 ATX 500W</td>
+                        <td>
+                            <ul>
+                                <li>Potencia: 500 W (Eficiencia &gt; 78%)</li>
+                                <li>PFC Activo</li>
+                                <li>Tipo ATX 12V V1.3</li>
+                                <li>Safety +: OCP, OVP, UVP, SCP, OPP, OTP</li>
+                                <li>Ventilador silencioso de 120 mm con control automático de velocidad</li>
+                                <li>Raíles: 1x +12V</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="https://www.coolmod.com/tacens-anima-apsi500-atx-500w-fuente-psu/?srsltid=AU7gw4XrtlKk9nLfM9m5T5FaqX1SnAbSTf2z_FnfcRGy2vxaL9nAAB_t">
+                                <img src="../img/F.jpg" alt="Fuente de alimentación de 500 W">
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- DISCO -->
+                    <tr>
+                        <th scope="row">DISCO DURO</th>
+                        <td>3832430-1642510006</td>
+                        <td>
+                            <ul>
+                                <li>Capacidad memoria: 128 GB</li>
+                                <li>Vel. de transferencia: 6 Gbit/s</li>
+                                <li>Velocidad de lectura: 520 MB/s</li>
+                                <li>Velocidad de escritura: 500 MB/s</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="https://www.pccomponentes.com/disco-duro-intenso-top-128gb-ssd-m-2-sata-3">
+                                <img src="../img/disco.jpg" alt="Disco duro SATA M.2 de 128 GB">
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- VENTILADOR -->
+                    <tr>
+                        <th scope="row">VENTILADOR - CPU</th>
+                        <td>PVA092G12N-P07-01 (AMD Wraith Stealth)</td>
+                        <td>
+                            <ul>
+                                <li>Capacidad térmica de 65 W</li>
+                                <li>Conector PWM de 4 pines</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="https://www.pccomponentes.com/ventilador-cpu-refrigeracion-aire-amd-socket-am4-92mm-wraith-stealth-negro-4-pin">
+                                <img src="../img/ventilador.jpg" alt="Ventilador de CPU AMD">
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- CABLE DE ALIMENTACIÓN -->
+                    <tr>
+                        <th scope="row">CABLE ALIMENTACIÓN</th>
+                        <td></td>
+                        <td>
+                            <ul>
+                                <li>Longitud: 1,5 m</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="https://www.pccomponentes.com/cable-de-alimentacion-ewent-ec1920-1-5-m-tipo-f-a-c13">
+                                <img src="../img/a1.webp" alt="Cable de alimentación de 1,5 metros">
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- BATERÍA BIOS -->
+                    <tr>
+                        <th scope="row">BATERÍA BIOS</th>
+                        <td>CR2032</td>
+                        <td>
+                            <ul>
+                                <li>Potencia: 3 V</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="https://www.pccomponentes.com/philips-pila-de-litio-cr2032-3v">
+                                <img src="../img/bateria de litio.jpg" alt="Batería de litio CR2032">
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer" id="informacion">
+        <section class="footer-content">
+            <img class="footer-logo" src="../img/CD.png" alt="Logo del Campus Digital">
+
+            <section class="footer-text">
+                <h2>Información del proyecto</h2>
+                <p>
+                    Realizado por:
+                    Lorenzo Falo Nuez,
+                    David Lanzarote López,
+                    Ángel Alba Enatarriaga
+                    y Robert Alexandru Maican.
+                </p>
+                <p>Curso: <strong>1º ASIR</strong></p>
+            </section>
+
+            <p class="copyright">© 2026 Inventario Equipo-A</p>
+        </section>
+    </footer>
+
+</body>
+</html>
