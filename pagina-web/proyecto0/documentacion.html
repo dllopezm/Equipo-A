@@ -44,5 +44,33 @@
     <p>El fin de semana, Ángel terminó de hacer la tabla con la información del inventario.</p>
     <p>El quinto dia hemos hecho trabajo extra en la web, Alex estuvo limpiando el codigo HTML y implementando una IU con CSS, hemos estado reorganizando la base de datos en drawdb y sqlite, por el otro lado, lanzarote esta construyendo la base de datos a partir de los datos de los componentes en SQlite, categorizando el inventario con los componentes clave y sus especificaciones, Angel estuvo poniendo las mismas caracteristicas en drawdb y nos hemos encontrado con un problema intentando exportar de drawdb a SQlite, hemos intentado varias vias, incluyendo consultar a un agente IA, a partir de la lista de los componentes que hemos recompilado, hemos consultado la informacion de los fabricantes en internet y puesto la informacion de las caracteristicas en la base de datos.</p>
     <p>El miércoles Alex hizo la página de la información del inventario y estuvimos implementándola en github/neocities.</p>
+    <h1><strong>PROPUESTA DE TRANSFORMACIÓN DIGITAL</strong></h1>
+    <h2><strong>Pilar 1: Identificación Única mediante Etiquetado QR Inteligente</strong></h2>
+    <ul>
+      <li><strong>El problema real del reto: </strong>Es difícil saber visualmente qué características tiene una placa base, una memoria RAM o un equipo montado sin encenderlo o desmontarlo.
+</li>
+      <li><strong>La solución digital: </strong>Implementar un sistema de <strong>etiquetado con códigos QR vinculados dinámicamente a vuestra Base de Datos.</strong></li>
+    <li><strong>Cómo mejora la gestión: </strong>Cualquier técnico o profesor, escaneando el código QR con su móvil, puede ver al instante:
+</li>
+      <ul>
+        <li>El procesador, RAM y almacenamiento exacto del equipo.</li>
+        <li>El historial de intervenciones (qué reparó vuestro grupo).</li>
+        <li>Su estado actual (Funcional / En reparación / Para piezas).</li>
+      </ul>
+    </ul>
+    <h2><strong>Pilar 2: Automatización de la Auditoría de Hardware (Inventario Asistido)</strong></h2>
+    <ul>
+      <li><strong>El problema real del reto: </strong>Consultar los componentes uno a uno en la BIOS o usar comandos de consola consume mucho tiempo y puede provocar errores humanos al transcribir los datos.</li>
+      <li><strong>La solución digital:</strong> Utilizar herramientas de <strong>auditoría automatizada por software</strong> de código abierto (como OCS Inventory o GLPI Agent) ejecutadas desde un USB de diagnóstico en el equipo recuperado.</li>
+      <li><strong>Cómo mejora la gestión:</strong> El software detecta automáticamente el modelo exacto de los componentes, los módulos de RAM, el estado de salud del disco (S.M.A.R.T.) y <strong>vuelca la información directamente en vuestra base de datos vía API,</strong> eliminando el registro manual.</li>
+    </ul>
+    <h2><strong>Pilar 3: Algoritmo de Compatibilidad y Reutilización de Componentes</strong></h2>
+    <ul>
+      <li><strong>El problema real del reto:</strong> Cuesta saber qué componentes de distintas generaciones pueden utilizarse conjuntamente (p. ej., si una RAM DDR3 sirve para una placa concreta).
+</li>
+      <li><strong>La solución digital:</strong> Explotar la base de datos que habéis diseñado integrando <strong>vistas lógicas o consultas de compatibilidad de zócalos (sockets) y ranuras.</strong></li>
+      <li><strong>Cómo mejora la gestión:</strong> El sistema permite lanzar una consulta digital rápida (ej. "¿Qué módulos de memoria libres tengo compatibles con la Placa Base X?") para saber inmediatamente qué piezas se pueden combinar para recuperar un segundo o tercer ordenador sin probar ensayo y error físicamente.
+</li>
+    </ul>
   </body>
 </html>
