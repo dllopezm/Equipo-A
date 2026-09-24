@@ -165,6 +165,28 @@ body {
     }
 }
 
+/* Links */
+
+/* unvisited link */
+a:link {
+  color: rgb(255, 196, 0);
+}
+
+/* visited link */
+a:visited {
+  color: rgb(128, 109, 0);
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(255, 225, 57);
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
 /* CABECERA: OCUPA APROXIMADAMENTE EL 20% INICIAL */
 
 .site-header {
