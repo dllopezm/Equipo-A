@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación del Proyecto 0</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Documentación del Proyecto 0</h1>
+    <h2>Roles iniciales</h2>
+      <p>(no son muy estrictos porque somos un equipo reducido y con poca experiencia, por lo que nos ayudamos los unos a los otros)</p>
+      <ul>
+        <li>LORENZO: DOCUMENTACIÓN</li>
+        <li>ÁNGEL: SECRETARIO</li>
+        <li>LANZAROTE: COORDINADOR</li>
+        <li>ALEX: GERENTE</li>
+      </ul>
+    <p>Distribución de las tareas:</p>
+    <ol type="1">
+      <li>Comprobar funcionamiento (Ángel)</li>
+      <li>Desmontar y documentar cada componente (Lanzarote y Lorenzo) (primer y segundo día)</li>
+      <li>Crear una tabla con la información de los componentes (Lorenzo) (segundo día)</li>
+      <li>Montar el ordenador de nuevo (Ángel y Lanzarote)</li>
+      <li>Instalar nuevo sistema operativo (Lorenzo) (tercer día)</li>
+      <li>Plantear ideas sobre la gestión del almacenaje del inventario (Colectivo)</li>
+    </ol>
+    <h2>Memoria de trabajo</h2>
+    <p>Al inicio de este proyecto hemos comenzado creando una base de datos de LibreOffice porque Lorenzo recibió clases sobre su funcionamiento en primero de bachillerato. No la utilizaríamos todavía porque antes queríamos ver si la torre de ordenador que nos habían dado funcionaba correctamente en un monitor. El ordenador ha funcionado inicialmente pero creemos que ya había sido utilizado porque nos pedía un login y una contraseña. El sistema operativo era Ubuntu, y hemos decidido que íbamos a reinstalar Ubuntu. El desmontaje del ordenador se complicó por la ausencia de destornilladores.</p>
+    <p>Antes de reinstalar Ubuntu hemos decidido clasificar los compontentes por su número de serie en la base de datos</p>
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <img src="img/Fuente alimentacion.jpeg" alt="Fuente de alimentación" style="width:35%">
+    </div>
+    <p style="text-align: center;">Fuente de Alimentación</p>
+    <p>Ya en casa, nuestro compañero Lorenzo utilizó un USB para grabar en él una distribución linux <a href="https://nl.releases.ubuntu.com/releases/24.04.3/">(Ubuntu 24.04.3)</a>, que era lo que tenía el ordenador como sistema operativo previamente. Además, verificó la imagen ISO por razones de seguridad.</p>
+    <p>El segundo día hemos desmontado la torre del ordenador para terminar la documentación de los componentes. Al desconectar de manera desorganizada el front panel de la placa base y no recordar cómo se volvía a montar, tuvimos algunas complicaciones en el trabajo que nos hicieron tardar más en montarlo de nuevo. Ya montado todo el ordenador, lo hemos conectado a un monitor y ha funcionado. Hemos reiniciado el ordenador para entrar en la BIOS y, con un USB conectado con la imagen ISO de Ubuntu hemos podido instalar el nuevo sistema operativo en el ordenador. También instalamos <a href="https://www.ventoy.net/en/download.html">Ventoy</a> en un pendrive por petición del profesor</p>
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <img src="img/bios 2.jpeg" alt="BIOS" style="width:35%">
+    </div>
+    <p style="text-align: center;">Imagen de la BIOS</p>
+    <p>El tercer día clonamos el repositorio de <a href="https://github.com/labartolomeh/ASIR-1-Retos.git">Abraham</a> en un submódulo de nuestro repositorio de github. Nos costó bastante, aunque en realidad era sencillo, pero no estábamos bien familiarizados con la relación entre la máquina local y la web. También estuvimos un buen rato practicando con HTML de manera individual para poder hacer en un futuro una web que gestione la información del inventario. También creamos un apartado para gestionar la página web de la información del inventario en nuestro repositorio de github.</p>
+    <p>Lanzarote estuvo buscando más información sobre cada componente recogido en una tabla excel que creamos para que esta fuese completada. Al final de la clase, nos enseñaron más hardware para documentar.</p>
+    <p>El cuarto día Lanzarote empezó a recopilar la información del hardware que encontramos el día anterior y empezó a explorar maneras para compatibilizar una información con otra y contrastarla. Además, comenzó a crear la base de datos en SQLite, basada en la tabla excel que teníamos. Por otro lado, Ángel <a href="https://www.w3schools.com/html/default.asp">empezó a pasar la información que teníamos en el excel a una página web HTML.</a> Además, <a href="https://www.drawdb.app/">se puso a trabajar con drawdb</a> porque teníamos que gestionar mejor internamente la base de datos, visualizar las relaciones entre tablas, etc.</a> Lorenzo buscó <a href="https://github.com/marketplace/actions/deploy-to-neocities">maneras de crear una página web en neocities que pueda desarrollarse de modo colaborativo utilizando Github Actions.</a> Luego Lorenzo aportó un poco al índice del HTML y empezó a migrar la presente documentación a un html. Poco a poco, se empezó a centralizar toda la información en el repositorio de github</p>
+    <p>El fin de semana, Ángel terminó de hacer la tabla con la información del inventario.</p>
+    <p>El quinto dia hemos hecho trabajo extra en la web, Alex estuvo limpiando el codigo HTML y implementando una IU con CSS, hemos estado reorganizando la base de datos en drawdb y sqlite, por el otro lado, lanzarote esta construyendo la base de datos a partir de los datos de los componentes en SQlite, categorizando el inventario con los componentes clave y sus especificaciones, Angel estuvo poniendo las mismas caracteristicas en drawdb y nos hemos encontrado con un problema intentando exportar de drawdb a SQlite, hemos intentado varias vias, incluyendo consultar a un agente IA, a partir de la lista de los componentes que hemos recompilado, hemos consultado la informacion de los fabricantes en internet y puesto la informacion de las caracteristicas en la base de datos.</p>
+    <p>El miércoles Alex hizo la página de la información del inventario y estuvimos implementándola en github/neocities.</p>
+    <h1><strong>PROPUESTA DE TRANSFORMACIÓN DIGITAL</strong></h1>
+    <h2><strong>Pilar 1: Identificación Única mediante Etiquetado QR Inteligente</strong></h2>
+    <ul>
+      <li><strong>El problema real del reto: </strong>Es difícil saber visualmente qué características tiene una placa base, una memoria RAM o un equipo montado sin encenderlo o desmontarlo.
+</li>
+      <li><strong>La solución digital: </strong>Implementar un sistema de <strong>etiquetado con códigos QR vinculados dinámicamente a vuestra Base de Datos.</strong></li>
+    <li><strong>Cómo mejora la gestión: </strong>Cualquier técnico o profesor, escaneando el código QR con su móvil, puede ver al instante:
+</li>
+      <ul>
+        <li>El procesador, RAM y almacenamiento exacto del equipo.</li>
+        <li>El historial de intervenciones (qué reparó vuestro grupo).</li>
+        <li>Su estado actual (Funcional / En reparación / Para piezas).</li>
+      </ul>
+    </ul>
+    <h2><strong>Pilar 2: Automatización de la Auditoría de Hardware (Inventario Asistido)</strong></h2>
+    <ul>
+      <li><strong>El problema real del reto: </strong>Consultar los componentes uno a uno en la BIOS o usar comandos de consola consume mucho tiempo y puede provocar errores humanos al transcribir los datos.</li>
+      <li><strong>La solución digital:</strong> Utilizar herramientas de <strong>auditoría automatizada por software</strong> de código abierto (como OCS Inventory o GLPI Agent) ejecutadas desde un USB de diagnóstico en el equipo recuperado.</li>
+      <li><strong>Cómo mejora la gestión:</strong> El software detecta automáticamente el modelo exacto de los componentes, los módulos de RAM, el estado de salud del disco (S.M.A.R.T.) y <strong>vuelca la información directamente en vuestra base de datos vía API,</strong> eliminando el registro manual.</li>
+    </ul>
+    <h2><strong>Pilar 3: Algoritmo de Compatibilidad y Reutilización de Componentes</strong></h2>
+    <ul>
+      <li><strong>El problema real del reto:</strong> Cuesta saber qué componentes de distintas generaciones pueden utilizarse conjuntamente (p. ej., si una RAM DDR3 sirve para una placa concreta).
+</li>
+      <li><strong>La solución digital:</strong> Explotar la base de datos que habéis diseñado integrando <strong>vistas lógicas o consultas de compatibilidad de zócalos (sockets) y ranuras.</strong></li>
+      <li><strong>Cómo mejora la gestión:</strong> El sistema permite lanzar una consulta digital rápida (ej. "¿Qué módulos de memoria libres tengo compatibles con la Placa Base X?") para saber inmediatamente qué piezas se pueden combinar para recuperar un segundo o tercer ordenador sin probar ensayo y error físicamente.
+</li>
+    </ul>
+  </body>
+</html>
