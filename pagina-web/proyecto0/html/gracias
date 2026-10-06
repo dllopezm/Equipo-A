@@ -1,0 +1,15 @@
+<html>
+    <meta charset="UTF-8">
+<head>
+<title>Gracias por enviar tus respuestas!</title>
+</head>
+<body>
+
+<h1>Muchas Gracias!</h1>
+<p>Tu respuesta se ha enviado.</p>
+
+<a href="../html/forms.html">Volver al Formulario</a><br>
+<a href="../html/Tabla inventario.html">Web del Inventario</a><br>
+
+</body>
+</html>
