@@ -46,8 +46,6 @@ Equipo A · Integrantes: Angel, Lorenzo, Lanzarote, Alex
 | 16 | Clasificación: por modelo, por ubicación y por licencia (apartado 6\) | **Por modelo:** Es un sistema Relacional que organiza los datos en tablas de filas y columnas usando el idioma SQL que conecta las tablas de forma lógica. **Por ubicación:** Es una base de datos **Local / Embebida**. La base de datos corre dentro del mismo proceso de la aplicación y accede directamente al sistema de archivos local sin usar estructura cliente-servidor a través de una red **Por licencia:** Es de **Dominio Público** No tiene una licencia de código abierto restrictiva tradicional; cualquiera puede copiar, modificar, publicar, compilar, vender o distribuir el código fuente de SQLite. |
 | 17 | ¿Serviría para el inventario del aula? ¿Por qué sí o por qué no? | SQLites serviría a no ser que se quisiera que muchas personas a la vez modifiquen la tabla o si no se quiere que alguna persona no toque algo de la tabla. |
   
-\*  (5)  
-![image1](https://github.com/dllopezm/Equipo-A/blob/Proyecto-0/GBD/bd/Captura%20de%20pantalla%202026-10-06%20130644.png)
 
 ## 6\. La prueba
 
