@@ -51,6 +51,9 @@ Equipo A · Integrantes: Angel, Lorenzo, Lanzarote, Alex
 
 Qué hicimos, qué salió y qué nos llamó la atención (tres o cuatro líneas). Captura en `E2-prueba.png`.  
 ![Prueba](https://github.com/dllopezm/Equipo-A/blob/Proyecto-0/GBD/bd/Captura%20de%20pantalla%202026-10-06%20130710.png)
+
+
+
 Preguntas: 
 
 - ¿qué devuelve el SELECT? 
