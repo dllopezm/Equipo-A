@@ -613,9 +613,10 @@ tbody td img:hover {
   margin: 20px auto;  /* Mantiene la proporción original */
 }
 /* Esto SOLO se aplicará a las imágenes dentro de documentacion0.html */
+/* En tu proyecto.css */
 .pagina-documentacion img {
-  width: 60%; /* Ajusta el % según prefieras */
-  height: auto;
+  width: 60% !important;
+  height: auto !important;
   display: block;
   margin: 20px auto;
 }
