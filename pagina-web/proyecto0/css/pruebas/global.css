@@ -1,0 +1,1634 @@
+:root {
+    /* =========================================================
+       PALETA DE COLORES
+       ========================================================= */
+
+    /*
+       :root representa el elemento raíz del documento HTML.
+       Definimos aquí variables CSS para poder reutilizar los
+       mismos colores en distintas partes de la página.
+
+       Si queremos cambiar el color principal de toda la web,
+       solo tenemos que modificar la variable correspondiente.
+    */
+
+    --fondo: #f8f8f4;
+    /* Color de fondo general de la página. */
+
+    --superficie: #ffffff;
+    /* Color de elementos que se sitúan sobre el fondo,
+       por ejemplo tarjetas, tablas o cabeceras. */
+
+    --superficie-alt: #fcfbf8;
+    /* Variante ligeramente diferente de la superficie.
+       Se utiliza, por ejemplo, para alternar el color
+       de las filas de una tabla. */
+
+    --texto: #2a2617;
+    /* Color principal utilizado para los textos. */
+
+    --texto-suave: #76735f;
+    /* Color más apagado para textos secundarios,
+       descripciones o información menos importante. */
+
+    --principal: #ebc725;
+    /* Color principal de la interfaz: el amarillo. */
+
+    --principal-hover: #d6b31c;
+    /* Variante más oscura del color principal.
+       Se utiliza normalmente cuando el usuario interactúa
+       con un elemento, por ejemplo un enlace. */
+
+    --principal-suave: #fff7c7;
+    /* Versión muy clara del amarillo.
+       Sirve para fondos de resaltado o estados hover suaves. */
+
+    --borde: #e8e7dc;
+    /* Color utilizado para bordes normales. */
+
+    --borde-fuerte: #d9d6c7;
+    /* Variante algo más marcada del borde. */
+
+    --oscuro: #412f0e;
+    /* Color marrón oscuro utilizado principalmente
+       en la navegación, cabecera de tabla y pie de página. */
+
+    --blanco: #ffffff;
+    /* Blanco reutilizable en diferentes elementos. */
+
+    --sombra: 0 0.625rem 1.875rem rgb(42 39 15 / 8%);
+    /*
+       Sombra principal de los elementos.
+
+       Los valores indican:
+       - 0: desplazamiento horizontal.
+       - 0.625rem: desplazamiento vertical.
+       - 1.875rem: desenfoque de la sombra.
+       - 8%: transparencia del color.
+
+       Se reutiliza en elementos grandes como tablas
+       o cabeceras.
+    */
+
+    --sombra-suave: 0 0.125rem 0.5rem rgb(42 39 15 / 4%);
+    /* Sombra mucho más discreta para elementos pequeños. */
+
+    --radio: 0.875rem;
+    /* Radio de redondeo de las esquinas.
+       Al reutilizar esta variable conseguimos que diferentes
+       elementos tengan un aspecto coherente. */
+}
+
+
+/* =========================================================
+   AJUSTES GENERALES
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    /*
+       box-sizing: border-box hace que el padding y el borde
+       se incluyan dentro del ancho y alto especificados.
+
+       Esto facilita mucho el cálculo de tamaños porque,
+       por ejemplo, un elemento de 100px seguirá ocupando
+       100px aunque tenga padding.
+    */
+    box-sizing: border-box;
+}
+
+html {
+    /*
+       Hace que los desplazamientos mediante enlaces internos
+       se realicen suavemente en lugar de saltar directamente
+       a la sección correspondiente.
+    */
+    scroll-behavior: smooth;
+
+    /*
+       Deja un espacio superior de 4rem cuando hacemos scroll
+       hasta un elemento.
+
+       Es útil porque tenemos una navegación sticky arriba
+       y así no tapa el contenido al llegar a una sección.
+    */
+    scroll-padding-top: 4rem;
+}
+
+body {
+    /*
+       100vh significa la altura completa de la ventana.
+       min-height garantiza que el body ocupe como mínimo
+       toda la pantalla aunque haya poco contenido.
+    */
+    min-height: 100vh;
+
+    /*
+       Eliminamos el margen que los navegadores aplican
+       por defecto al body.
+    */
+    margin: 0;
+
+    /*
+       Añadimos 20px de espacio interior alrededor de toda
+       la página para que el contenido no quede pegado
+       a los bordes de la ventana.
+    */
+    padding: 20px;
+
+    /*
+       Creamos un fondo compuesto por dos capas:
+
+       1. Un degradado radial amarillo situado arriba a la izquierda.
+       2. El color general de fondo.
+
+       El 12% hace que el amarillo sea bastante transparente.
+       "transparent 35rem" hace que el degradado desaparezca
+       progresivamente hasta esa distancia.
+    */
+    background:
+        radial-gradient(
+            circle at top left,
+            rgb(235 199 37 / 12%),
+            transparent 35rem
+        ),
+        var(--fondo);
+
+    /* Utilizamos el color de texto general definido arriba. */
+    color: var(--texto);
+
+    /*
+       Definimos una lista de fuentes.
+
+       El navegador intentará utilizar "Oswald".
+       Si no está disponible, probará Inter, después fuentes
+       genéricas del sistema y finalmente sans-serif.
+    */
+    font-family:
+        "Oswald",
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    /* Peso normal del texto. */
+    font-weight: 400;
+
+    /* Evitamos aplicar cursiva por defecto. */
+    font-style: normal;
+
+    /*
+       line-height controla el espacio vertical entre líneas.
+       1.6 significa que la altura de línea será 1.6 veces
+       aproximadamente el tamaño de la letra.
+    */
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   PANTALLA DE INTRODUCCIÓN
+   ========================================================= */
+
+.intro-screen {
+    /*
+       fixed hace que esta pantalla quede fijada respecto
+       a la ventana del navegador, independientemente
+       del scroll.
+    */
+    position: fixed;
+
+    /*
+       inset: 0 equivale a establecer:
+       top: 0;
+       right: 0;
+       bottom: 0;
+       left: 0;
+
+       Por tanto, la pantalla ocupa toda la ventana.
+    */
+    inset: 0;
+
+    /*
+       z-index elevado para garantizar que la introducción
+       aparezca por encima del resto de elementos.
+    */
+    z-index: 2000;
+
+    /*
+       Utilizamos CSS Grid para colocar fácilmente el contenido
+       en el centro de la pantalla.
+    */
+    display: grid;
+
+    /*
+       place-items: center centra el contenido tanto
+       horizontal como verticalmente.
+    */
+    place-items: center;
+
+    /*
+       Fondo compuesto por un brillo amarillo central
+       sobre el fondo oscuro.
+    */
+    background:
+        radial-gradient(
+            circle at center,
+            rgb(235 199 37 / 16%),
+            transparent 30rem
+        ),
+        var(--oscuro);
+
+    /* El texto de la pantalla de introducción será blanco. */
+    color: var(--blanco);
+
+    /*
+       La animación "intro-salida" comenzará después de 2.4s
+       y durará 700ms.
+
+       "forwards" mantiene el estado final de la animación.
+    */
+    animation: intro-salida 700ms ease 2.4s forwards;
+}
+
+.intro-content {
+    /*
+       También utilizamos Grid para organizar el contenido
+       verticalmente.
+    */
+    display: grid;
+
+    /*
+       Centra horizontalmente los elementos hijos.
+    */
+    justify-items: center;
+
+    /*
+       El contenido ocupará como máximo 40rem y como mínimo
+       el 90% del ancho disponible.
+    */
+    width: min(90%, 40rem);
+
+    /* Centramos el texto. */
+    text-align: center;
+
+    /*
+       El contenido aparece mediante una animación de entrada.
+       Empieza invisible y desplazado hacia abajo.
+    */
+    animation:
+        intro-entrada
+        1100ms
+        cubic-bezier(0.2, 0.8, 0.2, 1)
+        both;
+}
+
+.intro-logo {
+    /*
+       clamp() permite que el tamaño sea responsive:
+
+       - mínimo: 6rem
+       - preferido: 15vw
+       - máximo: 10rem
+    */
+    width: clamp(6rem, 15vw, 10rem);
+    height: clamp(6rem, 15vw, 10rem);
+
+    /* Separación entre el logo y el texto siguiente. */
+    margin-bottom: 1.25rem;
+
+    /*
+       contain hace que la imagen completa quepa dentro
+       de las dimensiones sin deformarse.
+    */
+    object-fit: contain;
+
+    /*
+       Añadimos una sombra alrededor de la imagen.
+       drop-shadow funciona especialmente bien con imágenes
+       que tienen transparencia.
+    */
+    filter:
+        drop-shadow(
+            0 0.75rem 1rem
+            rgb(0 0 0 / 25%)
+        );
+
+    /* El logo tiene su propia animación de entrada. */
+    animation:
+        logo-entrada
+        1200ms
+        cubic-bezier(0.2, 0.8, 0.2, 1)
+        both;
+}
+
+.intro-equipo {
+    /* Eliminamos los márgenes por defecto y dejamos
+       únicamente un pequeño espacio inferior. */
+    margin: 0 0 0.35rem;
+
+    /* Utilizamos el amarillo principal. */
+    color: var(--principal);
+
+    /* Tamaño pequeño para actuar como texto secundario. */
+    font-size: 0.9rem;
+
+    /* Texto bastante grueso para destacarlo. */
+    font-weight: 750;
+
+    /*
+       Aumentamos la separación entre letras para conseguir
+       el aspecto típico de etiquetas en mayúsculas.
+    */
+    letter-spacing: 0.2em;
+
+    /* Convertimos visualmente el texto a mayúsculas. */
+    text-transform: uppercase;
+}
+
+.intro-content h1 {
+    /* Eliminamos el margen que h1 tiene por defecto. */
+    margin: 0;
+
+    /*
+       El título se adapta al tamaño de pantalla:
+       mínimo 2.25rem, ideal 7vw y máximo 4.5rem.
+    */
+    font-size: clamp(2.25rem, 7vw, 4.5rem);
+
+    /* Título muy destacado. */
+    font-weight: 800;
+
+    /* Ligero espacio entre letras. */
+    letter-spacing: 0.04em;
+}
+
+.intro-subtitle {
+    /* Dejamos separación respecto al título. */
+    margin: 0.75rem 0 0;
+
+    /*
+       Blanco con 72% de opacidad para diferenciarlo
+       del título principal.
+    */
+    color: rgb(255 255 255 / 72%);
+
+    /* También adaptamos el tamaño al ancho de pantalla. */
+    font-size: clamp(0.85rem, 2vw, 1rem);
+}
+
+.intro-line {
+    /*
+       La línea también tiene un tamaño responsive.
+    */
+    width: clamp(5rem, 20vw, 9rem);
+    height: 0.2rem;
+
+    /* La separamos del contenido superior. */
+    margin-top: 1.5rem;
+
+    /*
+       999rem hace que los extremos sean completamente
+       redondeados, creando una especie de píldora.
+    */
+    border-radius: 999rem;
+
+    /* Utilizamos el amarillo principal. */
+    background: var(--principal);
+
+    /*
+       El punto desde el que crecerá la transformación
+       será el centro.
+    */
+    transform-origin: center;
+
+    /* La línea aparece mediante una animación propia. */
+    animation:
+        linea-entrada
+        900ms
+        ease
+        400ms
+        both;
+}
+
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+
+@keyframes intro-entrada {
+    /*
+       Estado inicial: invisible y desplazado 2rem hacia abajo.
+    */
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+
+    /*
+       Estado final: completamente visible y en su posición.
+    */
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logo-entrada {
+    /*
+       El logo comienza invisible, un poco más pequeño
+       y girado 8 grados hacia la izquierda.
+    */
+    from {
+        opacity: 0;
+        transform: scale(0.7) rotate(-8deg);
+    }
+
+    /*
+       Termina con su tamaño y orientación normales.
+    */
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+@keyframes linea-entrada {
+    /*
+       La línea empieza invisible y con anchura horizontal cero.
+    */
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    /*
+       Termina visible y con su tamaño normal.
+    */
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes intro-salida {
+    /*
+       Al principio la pantalla está completamente visible.
+    */
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /*
+       Casi al final se vuelve completamente transparente,
+       pero todavía sigue ocupando su espacio.
+    */
+    99% {
+        opacity: 0;
+        visibility: visible;
+    }
+
+    /*
+       Finalmente se oculta y deja de recibir eventos
+       del ratón o del teclado.
+    */
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+
+/* =========================================================
+   ENLACES
+   ========================================================= */
+
+/*
+   :link se aplica a enlaces que todavía no han sido visitados.
+*/
+a:link {
+    color: var(--principal-hover);
+}
+
+/*
+   :visited se aplica a enlaces que el navegador considera
+   que ya han sido visitados.
+*/
+a:visited {
+    color: var(--texto-suave);
+}
+
+/*
+   :hover se aplica mientras el cursor está encima del enlace.
+*/
+a:hover {
+    color: var(--principal);
+}
+
+/*
+   :active se aplica durante el momento en que el usuario
+   está pulsando el enlace.
+*/
+a:active {
+    color: var(--oscuro);
+}
+
+
+/* =========================================================
+   CABECERA
+   ========================================================= */
+
+.site-header {
+    /*
+       La cabecera tendrá como mínimo el 20% de la altura
+       de la ventana.
+    */
+    min-height: 20vh;
+
+    /*
+       Flexbox permite colocar el logo y el texto de la cabecera
+       de manera sencilla.
+    */
+    display: flex;
+
+    /* Centramos verticalmente los elementos. */
+    align-items: center;
+
+    /* Espacio interior de la cabecera. */
+    padding: 2rem 3rem;
+
+    /* Fondo blanco. */
+    background: var(--superficie);
+
+    /*
+       Añadimos una línea fina en la parte inferior
+       para separar visualmente la cabecera.
+    */
+    border-bottom:
+        0.0625rem solid
+        var(--borde);
+
+    /* Sombra para separar la cabecera del contenido. */
+    box-shadow: var(--sombra);
+}
+
+.header-content {
+    /*
+       La cabecera nunca superará los 87.5rem de ancho,
+       aunque la pantalla sea mucho más grande.
+    */
+    width: min(87.5rem, 100%);
+
+    /* Logo y texto se colocan en horizontal. */
+    display: flex;
+
+    /* Alineación vertical de los elementos. */
+    align-items: center;
+
+    /* Espacio entre el logo y el texto. */
+    gap: 1.5rem;
+
+    /*
+       margin-inline: auto centra horizontalmente el contenido
+       cuando existe espacio sobrante.
+    */
+    margin-inline: auto;
+}
+
+.header-logo {
+    /*
+       Tamaño responsive del logo.
+    */
+    width: clamp(4rem, 8vw, 7rem);
+    height: clamp(4rem, 8vw, 7rem);
+
+    /*
+       Evitamos que el logo se reduzca para intentar
+       dejar espacio al texto.
+    */
+    flex-shrink: 0;
+
+    /* La imagen mantiene sus proporciones. */
+    object-fit: contain;
+}
+
+.header-text {
+    /* Alineamos el texto a la izquierda. */
+    text-align: left;
+}
+
+.header-equipo {
+    /* Pequeño margen inferior. */
+    margin: 0 0 0.25rem;
+
+    color: var(--principal-hover);
+
+    font-size: 0.85rem;
+    font-weight: 750;
+
+    letter-spacing: 0.12em;
+
+    /* Mostramos el nombre en mayúsculas. */
+    text-transform: uppercase;
+}
+
+.site-header h1 {
+    /* Quitamos el margen por defecto del h1. */
+    margin: 0;
+
+    /* Título responsive. */
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+
+    font-weight: 750;
+
+    /* Un pequeño ajuste negativo entre las letras. */
+    letter-spacing: -0.03em;
+}
+
+.header-subtitle {
+    /* Separamos el subtítulo del título. */
+    margin: 0.4rem 0 0;
+
+    color: var(--texto-suave);
+
+    /* Tamaño adaptable. */
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
+
+.site-nav {
+    /*
+       sticky hace que la navegación permanezca visible
+       cuando hacemos scroll.
+
+       top: 0 indica que se queda pegada al borde superior.
+    */
+    position: sticky;
+    top: 0;
+
+    /*
+       La navegación debe aparecer por encima de otros elementos.
+    */
+    z-index: 1000;
+
+    /* Los enlaces se colocan horizontalmente. */
+    display: flex;
+
+    /* Centramos todos los enlaces. */
+    justify-content: center;
+
+    /* Pequeño espacio entre ellos. */
+    gap: 0.35rem;
+
+    /* La barra ocupa todo el ancho disponible. */
+    width: 100%;
+
+    /* Espacio interior. */
+    padding: 0.65rem 1rem;
+
+    /* Fondo oscuro para contrastar con el contenido. */
+    background: var(--oscuro);
+
+    /* Línea inferior muy sutil. */
+    border-bottom:
+        0.0625rem solid
+        rgb(255 255 255 / 10%);
+
+    /* Sombra para separar visualmente la navegación. */
+    box-shadow:
+        0 0.25rem 1rem
+        rgb(65 47 14 / 18%);
+}
+
+.site-nav a {
+    /* Área interior de cada enlace. */
+    padding: 0.4rem 0.85rem;
+
+    /* Esquinas redondeadas. */
+    border-radius: 0.5rem;
+
+    /* Blanco ligeramente transparente. */
+    color: rgb(255 255 255 / 82%);
+
+    font-size: 0.85rem;
+    font-weight: 650;
+
+    /* Quitamos el subrayado típico de los enlaces. */
+    text-decoration: none;
+
+    /*
+       Definimos qué propiedades se animarán al interactuar.
+       Las transiciones duran 150ms para que el cambio sea suave.
+    */
+    transition:
+        background-color 150ms ease,
+        color 150ms ease,
+        transform 150ms ease;
+}
+
+/*
+   Sobrescribimos el color de los enlaces visitados para que
+   sigan teniendo el mismo aspecto que los no visitados.
+*/
+.site-nav a:visited {
+    color: rgb(255 255 255 / 82%);
+}
+
+.site-nav a:hover {
+    /* Al pasar el ratón, el fondo se vuelve amarillo. */
+    background: var(--principal);
+
+    /* El texto pasa a oscuro para mantener contraste. */
+    color: var(--oscuro);
+
+    /*
+       Elevamos ligeramente el enlace para crear un pequeño
+       efecto visual de interacción.
+    */
+    transform: translateY(-0.0625rem);
+}
+
+.site-nav a:active {
+    color: var(--oscuro);
+}
+
+/*
+   focus-visible permite mostrar un indicador de foco
+   especialmente cuando el usuario navega con teclado.
+
+   Es importante para accesibilidad.
+*/
+.site-nav a:focus-visible {
+    outline:
+        0.1875rem solid
+        var(--principal);
+
+    outline-offset: 0.15rem;
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
+
+.inventory-area {
+    /* El contenido principal ocupará al menos el 70% de la ventana. */
+    min-height: 70vh;
+
+    width: 100%;
+
+    /* Espacio alrededor del contenido. */
+    padding: 2rem 3rem;
+}
+
+.inventory-area > section {
+    /*
+       Limitamos el ancho máximo para evitar que el contenido
+       sea excesivamente ancho en monitores grandes.
+    */
+    width: min(87.5rem, 100%);
+
+    /*
+       Centramos la sección horizontalmente.
+    */
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   EQUIPO DE TRABAJO
+   ========================================================= */
+
+.team-section {
+    /* Separación respecto a la sección siguiente. */
+    margin-bottom: 2rem;
+}
+
+.team-section h2,
+.section-title {
+    /*
+       Estos dos selectores comparten exactamente el mismo estilo.
+       Así evitamos repetir las mismas propiedades dos veces.
+    */
+    margin: 0 0 0.8rem;
+
+    font-size: 1.2rem;
+    font-weight: 750;
+}
+
+.team-list {
+    /*
+       Flexbox permite colocar los miembros del equipo
+       en una fila.
+    */
+    display: flex;
+
+    /*
+       Si no caben todos, pasan automáticamente a la siguiente línea.
+    */
+    flex-wrap: wrap;
+
+    gap: 0.5rem;
+
+    /*
+       Quitamos los márgenes y padding que normalmente tienen
+       las listas.
+    */
+    margin: 0;
+    padding: 0;
+
+    /* Eliminamos las viñetas. */
+    list-style: none;
+}
+
+.team-list li {
+    /* Espacio interior de cada miembro del equipo. */
+    padding: 0.45rem 0.8rem;
+
+    background: var(--superficie);
+
+    border:
+        0.0625rem solid
+        var(--borde);
+
+    /*
+       999rem produce una forma completamente redondeada,
+       parecida a una etiqueta o "pill".
+    */
+    border-radius: 999rem;
+
+    color: var(--texto-suave);
+
+    font-size: 0.875rem;
+
+    box-shadow: var(--sombra-suave);
+
+    /*
+       Las propiedades indicadas aquí cambiarán suavemente
+       cuando se active el hover.
+    */
+    transition:
+        background-color 150ms ease,
+        border-color 150ms ease,
+        color 150ms ease,
+        transform 150ms ease;
+}
+
+.team-list li:hover {
+    /*
+       Cuando pasamos el ratón por encima, la etiqueta adquiere
+       un fondo amarillo claro y un borde amarillo.
+    */
+    background: var(--principal-suave);
+
+    border-color: var(--principal);
+
+    color: var(--oscuro);
+
+    /* Pequeño movimiento hacia arriba. */
+    transform: translateY(-0.0625rem);
+}
+
+
+/* =========================================================
+   TABLA DEL INVENTARIO
+   ========================================================= */
+
+table {
+    /* La tabla ocupa todo el ancho disponible. */
+    width: 100%;
+
+    border:
+        0.0625rem solid
+        var(--borde);
+
+    /*
+       Eliminamos el espacio entre celdas que normalmente
+       puede existir en una tabla.
+    */
+    border-spacing: 0;
+
+    border-radius: var(--radio);
+
+    background: var(--superficie);
+
+    box-shadow: var(--sombra);
+
+    /*
+       Ocultamos cualquier contenido que sobresalga de las
+       esquinas redondeadas.
+    */
+    overflow: hidden;
+
+    /* El contenido de las celdas se alinea a la izquierda. */
+    text-align: left;
+}
+
+thead th {
+    /* Espacio interior de las cabeceras. */
+    padding: 1rem 1.1rem;
+
+    /* Fondo oscuro para diferenciar el encabezado. */
+    background: var(--oscuro);
+
+    color: var(--blanco);
+
+    font-size: 0.78rem;
+    font-weight: 750;
+
+    letter-spacing: 0.06em;
+
+    text-align: left;
+
+    /* Los títulos de las columnas aparecen en mayúsculas. */
+    text-transform: uppercase;
+}
+
+tbody th,
+tbody td {
+    /* Espacio interior de cada celda. */
+    padding: 1rem 1.1rem;
+
+    /*
+       Línea separadora entre las filas.
+    */
+    border-bottom:
+        0.0625rem solid
+        var(--borde);
+
+    /*
+       Alineamos verticalmente el contenido en el centro.
+    */
+    vertical-align: middle;
+}
+
+tbody th {
+    /*
+       La primera columna ocupa aproximadamente el 16%
+       del ancho de la tabla.
+    */
+    width: 16%;
+
+    color: var(--principal-hover);
+
+    font-size: 0.9rem;
+    font-weight: 750;
+}
+
+/*
+   Seleccionamos las filas pares para crear un efecto de
+   "cebra" que facilite seguir visualmente las filas.
+*/
+tbody tr:nth-child(even) {
+    background: var(--superficie-alt);
+}
+
+/*
+   Al pasar el ratón sobre una fila, la resaltamos.
+*/
+tbody tr:hover {
+    background: var(--principal-suave);
+}
+
+/*
+   La última fila no necesita una línea inferior,
+   porque la tabla ya tiene su propio borde.
+*/
+tbody tr:last-child th,
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* =========================================================
+   LISTAS DE CARACTERÍSTICAS
+   ========================================================= */
+
+table ul {
+    /* Eliminamos el margen superior/inferior por defecto. */
+    margin: 0;
+
+    /*
+       Conservamos espacio a la izquierda para las viñetas.
+    */
+    padding-left: 1.2rem;
+}
+
+table ul ul {
+    /*
+       Las listas anidadas tienen un pequeño margen superior.
+    */
+    margin-top: 0.35rem;
+
+    /*
+       Aumentamos la sangría para distinguir el segundo nivel.
+    */
+    padding-left: 1.25rem;
+}
+
+table li {
+    /* Separamos ligeramente los elementos de las listas. */
+    margin: 0.25rem 0;
+
+    color: var(--texto-suave);
+}
+
+/*
+   ::marker permite modificar el aspecto de las viñetas
+   sin modificar el texto.
+*/
+table li::marker {
+    color: var(--principal);
+}
+
+/*
+   Los elementos de segundo nivel son ligeramente más pequeños.
+*/
+table ul ul li {
+    font-size: 0.92em;
+}
+
+/*
+   Las viñetas del segundo nivel utilizan un color más discreto.
+*/
+table ul ul li::marker {
+    color: var(--borde-fuerte);
+}
+
+
+/* =========================================================
+   REFERENCIAS DE LOS COMPONENTES
+   ========================================================= */
+
+/*
+   nth-child(2) selecciona la segunda celda de cada fila.
+
+   En este caso se utiliza para dar un aspecto de código
+   a las referencias de los componentes.
+*/
+tbody td:nth-child(2) {
+    color: var(--texto-suave);
+
+    /*
+       Utilizamos una fuente monoespaciada para que las referencias
+       técnicas tengan aspecto de código.
+    */
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   IMÁGENES Y ENLACES DE PRODUCTOS
+   ========================================================= */
+
+/*
+   last-child selecciona la última celda de cada fila.
+*/
+tbody td:last-child {
+    width: 22%;
+
+    /* Centramos las imágenes y enlaces. */
+    text-align: center;
+}
+
+tbody td:last-child a {
+    /*
+       El enlace ocupa toda la anchura disponible de la celda.
+    */
+    display: block;
+
+    padding: 0.4rem;
+
+    border-radius: 0.75rem;
+
+    /*
+       Solo animamos el cambio de color del fondo.
+    */
+    transition:
+        background-color 150ms ease;
+}
+
+tbody td:last-child a:hover {
+    /* Al pasar el ratón, resaltamos la zona del enlace. */
+    background: var(--principal-suave);
+}
+
+tbody td img {
+    /*
+       block elimina algunos espacios inesperados que pueden
+       aparecer cuando una imagen se comporta como elemento inline.
+    */
+    display: block;
+
+    /*
+       Tamaño responsive de las imágenes.
+    */
+    width: clamp(12rem, 18vw, 24rem);
+    height: clamp(10rem, 18vw, 18rem);
+
+    /*
+       Centramos horizontalmente la imagen.
+    */
+    margin-inline: auto;
+
+    /*
+       La imagen mantiene sus proporciones.
+    */
+    object-fit: contain;
+
+    border-radius: 0.75rem;
+
+    /*
+       Añadimos una sombra a la imagen.
+    */
+    filter:
+        drop-shadow(
+            0 0.5rem 0.75rem
+            rgb(42 39 15 / 12%)
+        );
+
+    /*
+       Cuando cambie el tamaño o la sombra, el cambio será suave.
+    */
+    transition:
+        transform 180ms ease,
+        filter 180ms ease;
+}
+
+tbody td img:hover {
+    /*
+       Aumentamos ligeramente la imagen al pasar el ratón.
+    */
+    transform: scale(1.04);
+
+    /*
+       También hacemos un poco más visible la sombra.
+    */
+    filter:
+        drop-shadow(
+            0 0.75rem 1.125rem
+            rgb(42 39 15 / 18%)
+        );
+}
+
+
+/* =========================================================
+   PIE DE PÁGINA
+   ========================================================= */
+
+.site-footer {
+    /* El footer ocupará como mínimo el 10% de la ventana. */
+    min-height: 10vh;
+
+    padding: 1.5rem 3rem;
+
+    background: var(--oscuro);
+
+    color: var(--blanco);
+}
+
+.footer-content {
+    /* Limitamos el ancho igual que en el resto de la página. */
+    width: min(87.5rem, 100%);
+
+    /* Logo y texto se colocan en horizontal. */
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.25rem;
+
+    /* Centramos el contenido. */
+    margin-inline: auto;
+}
+
+.footer-logo {
+    /* Tamaño responsive del logo. */
+    width: clamp(3rem, 5vw, 5rem);
+    height: clamp(3rem, 5vw, 5rem);
+
+    /* Evitamos que Flexbox lo reduzca. */
+    flex-shrink: 0;
+
+    object-fit: contain;
+}
+
+.footer-text {
+    /*
+       flex: 1 permite que este elemento ocupe todo el espacio
+       restante disponible.
+    */
+    flex: 1;
+}
+
+.site-footer h2 {
+    margin: 0 0 0.2rem;
+
+    font-size: 1rem;
+}
+
+.site-footer p {
+    margin: 0.15rem 0;
+
+    /* Blanco ligeramente transparente. */
+    color: rgb(255 255 255 / 78%);
+
+    font-size: 0.8rem;
+}
+
+.copyright {
+    /*
+       Evita que el texto de copyright se divida en varias líneas.
+    */
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ACCESIBILIDAD Y FOCO
+   ========================================================= */
+
+/*
+   Cuando un elemento recibe el foco mediante teclado,
+   mostramos un borde amarillo claramente visible.
+
+   Esto permite saber en qué elemento estamos al navegar
+   sin ratón.
+*/
+:focus-visible {
+    outline:
+        0.1875rem solid
+        var(--principal);
+
+    outline-offset: 0.1875rem;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+/*
+   Estas reglas se aplican cuando la pantalla mide como máximo
+   56.25rem (aproximadamente 900px).
+
+   A partir de aquí empezamos a reducir espacios para adaptar
+   el diseño a tablets y pantallas medianas.
+*/
+@media (max-width: 56.25rem) {
+
+    .site-header,
+    .inventory-area,
+    .site-footer {
+        /*
+           Reducimos el padding horizontal de 3rem a 1.5rem
+           para aprovechar mejor el espacio.
+        */
+        padding-inline: 1.5rem;
+    }
+
+    thead th,
+    tbody th,
+    tbody td {
+        /* Reducimos el espacio interno de las celdas. */
+        padding: 0.75rem;
+    }
+
+    tbody td img {
+        /*
+           Reducimos el tamaño máximo de las imágenes
+           para que la tabla no resulte demasiado grande.
+        */
+        width: clamp(10rem, 20vw, 16rem);
+        height: clamp(8rem, 20vw, 14rem);
+    }
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+/*
+   Estas reglas se aplican en pantallas de hasta 43.75rem
+   (aproximadamente 700px).
+*/
+@media (max-width: 43.75rem) {
+
+    .site-header {
+        min-height: 20vh;
+
+        /* Reducimos el espacio de la cabecera. */
+        padding: 1.5rem 1rem;
+    }
+
+    .header-content {
+        gap: 1rem;
+    }
+
+    .header-logo {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .site-header h1 {
+        font-size: clamp(1.25rem, 6vw, 1.8rem);
+    }
+
+    .header-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .site-nav {
+        padding: 0.5rem;
+    }
+
+    .site-nav a {
+        /*
+           Cada enlace puede crecer y adaptarse al espacio
+           disponible.
+        */
+        flex: 1 1 auto;
+
+        padding: 0.4rem 0.5rem;
+
+        font-size: 0.78rem;
+
+        /* Centramos el texto de los botones. */
+        text-align: center;
+    }
+
+    .inventory-area {
+        min-height: 70vh;
+
+        padding: 1rem;
+    }
+
+    .team-list {
+        /*
+           En móvil los miembros del equipo se colocan
+           verticalmente en lugar de horizontalmente.
+        */
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    table {
+        /*
+           Convertimos la tabla en un elemento de bloque para
+           poder controlar su comportamiento en pantallas pequeñas.
+        */
+        display: block;
+
+        max-width: 100%;
+
+        /*
+           Si la tabla es demasiado ancha, aparece scroll horizontal
+           en lugar de romper el diseño de la página.
+        */
+        overflow-x: auto;
+    }
+
+    thead th,
+    tbody th,
+    tbody td {
+        /*
+           Evitamos que las columnas se vuelvan demasiado estrechas.
+        */
+        min-width: 9.5rem;
+    }
+
+    tbody th {
+        min-width: 10.5rem;
+    }
+
+    tbody td img {
+        /* Reducimos todavía más las imágenes. */
+        width: clamp(8rem, 35vw, 12rem);
+        height: clamp(7rem, 30vw, 10rem);
+    }
+
+    .site-footer {
+        min-height: 10vh;
+
+        padding: 1rem;
+    }
+
+    .footer-content {
+        /*
+           En móvil alineamos el contenido desde arriba,
+           algo más natural cuando el espacio es reducido.
+        */
+        align-items: flex-start;
+    }
+
+    .footer-logo {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .site-footer p {
+        font-size: 0.7rem;
+    }
+
+    .copyright {
+        /*
+           Empujamos el copyright hacia la derecha.
+        */
+        margin-left: auto;
+    }
+}
+
+
+/* =========================================================
+   MÓVIL PEQUEÑO
+   ========================================================= */
+
+/*
+   Para pantallas de hasta 30rem (aproximadamente 480px)
+   hacemos una segunda adaptación todavía más compacta.
+*/
+@media (max-width: 30rem) {
+
+    .header-logo {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .header-content {
+        gap: 0.75rem;
+    }
+
+    .site-header h1 {
+        font-size: 1.25rem;
+    }
+
+    .header-equipo {
+        font-size: 0.7rem;
+    }
+
+    .header-subtitle {
+        font-size: 0.72rem;
+    }
+
+    .site-nav a {
+        font-size: 0.72rem;
+    }
+
+    .inventory-area {
+        /*
+           Reducimos todavía más el espacio para aprovechar
+           cada píxel disponible.
+        */
+        padding: 0.75rem;
+    }
+
+    .footer-content {
+        gap: 0.75rem;
+    }
+
+    .footer-logo {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .copyright {
+        /*
+           En una pantalla muy pequeña ocultamos el copyright
+           para evitar que ocupe demasiado espacio.
+        */
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   REDUCCIÓN DE ANIMACIONES
+   ========================================================= */
+
+/*
+   Esta media query detecta si el usuario ha indicado en su
+   sistema operativo que prefiere reducir las animaciones.
+
+   Es una medida de accesibilidad: algunas personas pueden
+   sentirse incómodas con muchos movimientos en pantalla.
+*/
+@media (prefers-reduced-motion: reduce) {
+
+    /*
+       Desactivamos la animación de salida de la introducción
+       y la dejamos directamente invisible.
+    */
+    .intro-screen {
+        animation: none;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+    }
+
+    /*
+       También desactivamos las animaciones de los elementos
+       que aparecen dentro de la introducción.
+    */
+    .intro-content,
+    .intro-logo,
+    .intro-line {
+        animation: none;
+    }
+
+    /*
+       Si el usuario prefiere menos movimiento, también quitamos
+       el desplazamiento suave de la página.
+    */
+    html {
+        scroll-behavior: auto;
+    }
+
+    /*
+       Desactivamos las transiciones para evitar movimientos
+       y cambios animados.
+    */
+    .site-nav a,
+    .team-list li,
+    tbody td:last-child a,
+    tbody td img {
+        transition: none;
+    }
+}
+
+
+/* =========================================================
+   VISTA DE IMPRESIÓN
+   ========================================================= */
+
+/*
+   Estas reglas solo se aplican cuando el usuario imprime
+   la página o utiliza la vista previa de impresión.
+*/
+@media print {
+
+    .site-nav {
+        /*
+           En papel no tiene sentido que la navegación
+           permanezca sticky.
+        */
+        position: static;
+
+        /* Eliminamos la sombra para ahorrar tinta y simplificar. */
+        box-shadow: none;
+    }
+
+    table {
+        /* Quitamos la sombra de la tabla para imprimirla mejor. */
+        box-shadow: none;
+
+        /* Utilizamos un borde negro para que sea visible en papel. */
+        border-color: #000000;
+    }
+
+    thead th {
+        /*
+           Quitamos el fondo oscuro y utilizamos blanco y negro
+           para que la impresión sea más sencilla.
+        */
+        background: #ffffff;
+
+        color: #000000;
+    }
+
+    tbody tr:hover {
+        /*
+           El efecto hover no tiene sentido al imprimir,
+           por lo que eliminamos ese fondo.
+        */
+        background: transparent;
+    }
+
+    tbody td img {
+        /*
+           Quitamos las sombras de las imágenes para evitar
+           gastar tinta innecesariamente.
+        */
+        filter: none;
+    }
+}
