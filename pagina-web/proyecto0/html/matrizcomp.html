@@ -1,162 +1,217 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matriz de Compatibilidad de Componentes</title>
-    <link rel="stylesheet" href="../css/stylematrix.css">
+    <meta name="description" content="Matriz de compatibilidad de componentes del Equipo-A">
+    <title>Matriz de Compatibilidad | Equipo-A</title>
+    <link rel="stylesheet" href="../css/proyecto.css">
 </head>
+
 <body>
 
-    <h1>MATRIZ DE COMPATIBILIDAD</h1>
+    <!-- CABECERA PRINCIPAL -->
+    <header class="site-header" id="inicio">
+        <section class="header-content">
+            <img class="header-logo" src="../img/CD.png" alt="Logo del Campus Digital">
 
-    <table>
-        <thead>
-            <!-- Primera Fila: Categorías del Hardware -->
-            <tr class="category-header">
-                <th class="row-title">Placas base</th>
-                <th colspan="5">RAM</th>
-                <th colspan="3">CPU</th>
-                <th colspan="4">Almacenamiento</th>
-                <th colspan="3">GPU</th>
-                <th colspan="4">Placa de expansión</th>
-                <th colspan="4">Refrigeración</th>
-                <th colspan="4">Fuente de alimentación</th>
-            </tr>
-            <!-- Segunda Fila: Modelos de Componentes -->
-            <tr class="component-header">
-                <th class="row-title">Modelos</th>
-                <!-- RAM -->
-                <th>Ram XPG GAMMIX</th>
-                <th>Ram Kingston KHX6400SS2</th>
-                <th>RAM Samsung M378A1G43EB1-CPB</th>
-                <th>RAM Kingston 3332938-0983170</th>
-                <!-- CPU -->
-                <th>Kingston 4804661</th>
-                <th>AMD Athlon 3000G with Radeon Vega Graphics</th>
-                <th>AMD Athlon II X2 250</th>
-                <!-- Almacenamiento -->
-                <th>INTEL core 2 (no disting.)</th>
-                <th>SSD Intenso Top Performance</th>
-                <th>HDD WD Blue</th>
-                <th>HDD SpinPoint F3</th>
-                <!-- GPU -->
-                <th>SanDisk SSD PLUS</th>
-                <th>ASUS EN9600GT</th>
-                <th>Sapphire ATI Radeon HD 3650</th>
-                <th>ASUS The Retro Web EAH3450/HTP/512M/A</th>
-                <th>Tarjeta de red inalámbrica interna (WiFi)</th>
-                <th>Conceptronic C480i</th>
-                <th>Tarjeta de red inalámbrica interna</th>
-                <!-- Refrigeración -->
-                <th>Tarjeta controladora FireWire 400 (IEEE 1394a / i.LINK)</th>
-                <th>Refrigeración aire CPU AMDWraith Stealth</th>
-                <th>Refrigeración aire CPU Akasa EVO 120 (AK-920)</th>
-                <th>Ventilador chasis indep. Ning Jie NJ12025SE</th>
-                <!-- Fuente -->
-                <th>Refrigeración aire CPU Gigabyte G-Power Cooler Pro</th>
-                <th>TACENS ANIMA APSI500 ATX 500W</th>
-                <th>Fuente Thermaltake Litepower 700W ATX</th>
-                <th>Maxima Oke 450W ST-452</th>
-                <th>Fuente PC CASE 500W</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Fila 1: GIGABYTE A520M K V2 -->
-            <tr>
-                <td class="row-title">GIGABYTE A520M K V2</td>
-                <td class="compatible">✓</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="empty">-</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="empty">-</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="empty">-</td>
-                <td class="empty">-</td>
-                <td class="empty">-</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-            </tr>
-            <!-- Fila 2: ASUS M2N68-AM PLUS -->
-            <tr>
-                <td class="row-title">ASUS M2N68-AM PLUS</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="empty">-</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-            </tr>
-            <!-- Fila 3: ASUS P5LD2 SE -->
-            <tr>
-                <td class="row-title">ASUS P5LD2 SE</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="empty">-</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="empty">-</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-                <td class="compatible">✓</td>
-            </tr>
-        </tbody>
-    </table>
-<footer><br><a href="../index0.html">Ir atrás</a></footer>
+            <section class="header-text">
+                <p class="header-equipo">EQUIPO-A</p>
+                <h1>MATRIZ DE COMPATIBILIDAD</h1>
+                <p class="header-subtitle">
+                    Compatibilidad entre placas base y el resto de componentes
+                </p>
+            </section>
+        </section>
+    </header>
+
+    <!-- NAVEGACIÓN QUE PERMANECE VISIBLE AL DESPLAZARSE -->
+    <nav class="site-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#matriz">Matriz</a>
+        <a href="#informacion">Información</a>
+        <a href="../index0.html">Ir atrás</a>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="inventory-area">
+        <section id="matriz" aria-labelledby="matriz-title">
+            <h2 id="matriz-title" class="section-title">Matriz de compatibilidad de componentes</h2>
+
+            <div class="table-scroll">
+                <table class="matrix-table">
+                    <thead>
+                    <!-- Primera Fila: Categorías del Hardware -->
+                    <tr class="category-header">
+                        <th class="row-title">Placas base</th>
+                        <th colspan="5">RAM</th>
+                        <th colspan="3">CPU</th>
+                        <th colspan="4">Almacenamiento</th>
+                        <th colspan="3">GPU</th>
+                        <th colspan="4">Placa de expansión</th>
+                        <th colspan="4">Refrigeración</th>
+                        <th colspan="4">Fuente de alimentación</th>
+                    </tr>
+                    <!-- Segunda Fila: Modelos de Componentes -->
+                    <tr class="component-header">
+                        <th class="row-title">Modelos</th>
+                        <!-- RAM -->
+                        <th>Ram XPG GAMMIX</th>
+                        <th>Ram Kingston KHX6400SS2</th>
+                        <th>RAM Samsung M378A1G43EB1-CPB</th>
+                        <th>RAM Kingston 3332938-0983170</th>
+                        <!-- CPU -->
+                        <th>Kingston 4804661</th>
+                        <th>AMD Athlon 3000G with Radeon Vega Graphics</th>
+                        <th>AMD Athlon II X2 250</th>
+                        <!-- Almacenamiento -->
+                        <th>INTEL core 2 (no disting.)</th>
+                        <th>SSD Intenso Top Performance</th>
+                        <th>HDD WD Blue</th>
+                        <th>HDD SpinPoint F3</th>
+                        <!-- GPU -->
+                        <th>SanDisk SSD PLUS</th>
+                        <th>ASUS EN9600GT</th>
+                        <th>Sapphire ATI Radeon HD 3650</th>
+                        <th>ASUS The Retro Web EAH3450/HTP/512M/A</th>
+                        <th>Tarjeta de red inalámbrica interna (WiFi)</th>
+                        <th>Conceptronic C480i</th>
+                        <th>Tarjeta de red inalámbrica interna</th>
+                        <!-- Refrigeración -->
+                        <th>Tarjeta controladora FireWire 400 (IEEE 1394a / i.LINK)</th>
+                        <th>Refrigeración aire CPU AMDWraith Stealth</th>
+                        <th>Refrigeración aire CPU Akasa EVO 120 (AK-920)</th>
+                        <th>Ventilador chasis indep. Ning Jie NJ12025SE</th>
+                        <!-- Fuente -->
+                        <th>Refrigeración aire CPU Gigabyte G-Power Cooler Pro</th>
+                        <th>TACENS ANIMA APSI500 ATX 500W</th>
+                        <th>Fuente Thermaltake Litepower 700W ATX</th>
+                        <th>Maxima Oke 450W ST-452</th>
+                        <th>Fuente PC CASE 500W</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Fila 1: GIGABYTE A520M K V2 -->
+                    <tr>
+                        <td class="row-title">GIGABYTE A520M K V2</td>
+                        <td class="compatible">✓</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="empty">-</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="empty">-</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="empty">-</td>
+                        <td class="empty">-</td>
+                        <td class="empty">-</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                    </tr>
+                    <!-- Fila 2: ASUS M2N68-AM PLUS -->
+                    <tr>
+                        <td class="row-title">ASUS M2N68-AM PLUS</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="empty">-</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                    </tr>
+                    <!-- Fila 3: ASUS P5LD2 SE -->
+                    <tr>
+                        <td class="row-title">ASUS P5LD2 SE</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="empty">-</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="empty">-</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                        <td class="compatible">✓</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer" id="informacion">
+        <section class="footer-content">
+            <img class="footer-logo" src="../img/CD.png" alt="Logo del Campus Digital">
+
+            <section class="footer-text">
+                <h2>Información del proyecto</h2>
+                <p>
+                    Realizado por:
+                    Lorenzo Falo Nuez,
+                    David Lanzarote López,
+                    Ángel Alba Enatarriaga
+                    y Robert Alexandru Maican.
+                </p>
+                <p>Curso: <strong>1º ASIR</strong></p>
+            </section>
+
+            <p class="copyright">© 2026 Inventario Equipo-A</p>
+        </section>
+    </footer>
+
 </body>
+
 </html>
