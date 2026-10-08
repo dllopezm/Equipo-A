@@ -612,6 +612,13 @@ tbody td img:hover {
   display: block;
   margin: 20px auto;  /* Mantiene la proporción original */
 }
+/* Esto SOLO se aplicará a las imágenes dentro de documentacion0.html */
+.pagina-documentacion img {
+  width: 60%; /* Ajusta el % según prefieras */
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
 /* TABLAS: ENVOLTORIO CON SCROLL HORIZONTAL */
 
 .table-scroll {
