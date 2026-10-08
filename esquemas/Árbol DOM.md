@@ -4,7 +4,7 @@ document
 
 └── html
 
-   ├── head
+    ├── head
 
     │   	├── meta, title         
 
