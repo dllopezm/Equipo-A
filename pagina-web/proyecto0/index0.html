@@ -1,24 +1,79 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="es">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Índice del Proyecto 0</title>
-    <link href="css/global.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <h1>Índice del Proyecto 0</h1>
-    <p>El proyecto 0 consiste en la mejora del sistema de gestión de un inventario de hardware, con su respectiva clasificación e identificación</p>
-    <ol type="a" start="0">
-      <li><a href="html/documentacion0.html">Documentación</a></li>
-      <li><a href="html/kanban.html">Canvas</a></li>
-      <li><a href="html/Tabla de inventario.html">Web de información del inventario</a></li>
-      <li><a href="html/forms.html">Formulario</a></li>
-      <li><a href="html/matrizcomp.html">Matriz de compatibilidad</a></li>
-    </ol>
-    <footer><br><a href="../index.html">Ir atrás</a></footer>
-  </body>
-  <html/>
+    <meta name="description" content="Índice del Proyecto 0 del Equipo-A">
+    <title>Índice del Proyecto 0 | Equipo-A</title>
+    <link rel="stylesheet" href="css/proyecto.css">
+</head>
+
+<body>
+
+    <!-- CABECERA PRINCIPAL -->
+    <header class="site-header" id="inicio">
+        <section class="header-content">
+            <img class="header-logo" src="img/CD.png" alt="Logo del Campus Digital">
+
+            <section class="header-text">
+                <p class="header-equipo">EQUIPO-A</p>
+                <h1>ÍNDICE DEL PROYECTO 0</h1>
+                <p class="header-subtitle">
+                    Inventario de componentes y características del equipo
+                </p>
+            </section>
+        </section>
+    </header>
+
+    <!-- NAVEGACIÓN QUE PERMANECE VISIBLE AL DESPLAZARSE -->
+    <nav class="site-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#contenido">Contenido</a>
+        <a href="#informacion">Información</a>
+        <a href="../index.html">Ir atrás</a>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="inventory-area">
+        <section id="contenido" aria-labelledby="contenido-title">
+            <h2 id="contenido-title" class="section-title">Contenido del proyecto</h2>
+            <p class="index-description">
+                El proyecto 0 consiste en la mejora del sistema de gestión de un inventario de hardware,
+                con su respectiva clasificación e identificación.
+            </p>
+
+            <ol class="index-list" type="a" start="0">
+                <li><a href="html/documentacion0.html">Documentación</a></li>
+                <li><a href="html/kanban.html">Canvas</a></li>
+                <li><a href="html/Tabla de inventario.html">Web de información del inventario</a></li>
+                <li><a href="html/forms.html">Formulario</a></li>
+                <li><a href="html/matrizcomp.html">Matriz de compatibilidad</a></li>
+            </ol>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer" id="informacion">
+        <section class="footer-content">
+            <img class="footer-logo" src="img/CD.png" alt="Logo del Campus Digital">
+
+            <section class="footer-text">
+                <h2>Información del proyecto</h2>
+                <p>
+                    Realizado por:
+                    Lorenzo Falo Nuez,
+                    David Lanzarote López,
+                    Ángel Alba Enatarriaga
+                    y Robert Alexandru Maican.
+                </p>
+                <p>Curso: <strong>1º ASIR</strong></p>
+            </section>
+
+            <p class="copyright">© 2026 Inventario Equipo-A</p>
+        </section>
+    </footer>
+
+</body>
+
+</html>
