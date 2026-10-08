@@ -1,51 +1,106 @@
-<html>
-    <meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
-
-<title>Formulario Test</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario de prueba del Equipo-A">
+    <title>Formulario Test | Equipo-A</title>
+    <link rel="stylesheet" href="../css/proyecto.css">
 </head>
+
 <body>
-<header>
 
-    <h1>Prueba de Formulario</h1>
+    <!-- CABECERA PRINCIPAL -->
+    <header class="site-header" id="inicio">
+        <section class="header-content">
+            <img class="header-logo" src="../img/CD.png" alt="Logo del Campus Digital">
 
-</header>
+            <section class="header-text">
+                <p class="header-equipo">EQUIPO-A</p>
+                <h1>PRUEBA DE FORMULARIO</h1>
+                <p class="header-subtitle">
+                    Formulario de prueba con los distintos tipos de campos
+                </p>
+            </section>
+        </section>
+    </header>
 
-<form action="../html/gracias.html">
+    <!-- NAVEGACIÓN QUE PERMANECE VISIBLE AL DESPLAZARSE -->
+    <nav class="site-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#formulario">Formulario</a>
+        <a href="#informacion">Información</a>
+        <a href="Tabla%20de%20inventario.html">Inventario</a>
+        <a href="../index0.html">Ir atrás</a>
+    </nav>
 
- <label for="test">Escribe tu texto:</label> <!--Caja de texto-->
- 
- <input type="text" id="test" name="test"><br>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="inventory-area">
+        <section id="formulario" class="narrow" aria-labelledby="form-title">
+            <h2 id="form-title" class="section-title">Formulario</h2>
 
- <p>Elige una o varias:</p> <!--Checkbox-->
+            <form class="formulario" action="../html/gracias.html">
 
- <label for="test1"></label><input type="checkbox" id="test1" name="test1">Test1<br>
- <label for="test2"></label><input type="checkbox" id="test2" name="test2">Test2<br>
- <label for="test3"></label><input type="checkbox" id="test3" name="test3">Test3<br>
+                <!-- Caja de texto -->
+                <div class="campo">
+                    <label for="test">Escribe tu texto:</label>
+                    <input type="text" id="test" name="test">
+                </div>
 
- <p>Elige solo una:</p> <!--Radio-->
+                <!-- Checkbox -->
+                <fieldset>
+                    <legend>Elige una o varias:</legend>
+                    <div class="opcion"><input type="checkbox" id="test1" name="test1"><label for="test1">Test1</label></div>
+                    <div class="opcion"><input type="checkbox" id="test2" name="test2"><label for="test2">Test2</label></div>
+                    <div class="opcion"><input type="checkbox" id="test3" name="test3"><label for="test3">Test3</label></div>
+                </fieldset>
 
-  <input type="radio" id="1" name="test4" value="Test1"> <label for="test4">Test1</label><br>
-  <input type="radio" id="2" name="test4" value="Test2"> <label for="test4">Test2</label><br>
-  <input type="radio" id="3" name="test4" value="Test3"> <label for="test4">Test3</label><br>
+                <!-- Radio -->
+                <fieldset>
+                    <legend>Elige solo una:</legend>
+                    <div class="opcion"><input type="radio" id="radio1" name="test4" value="Test1"><label for="radio1">Test1</label></div>
+                    <div class="opcion"><input type="radio" id="radio2" name="test4" value="Test2"><label for="radio2">Test2</label></div>
+                    <div class="opcion"><input type="radio" id="radio3" name="test4" value="Test3"><label for="radio3">Test3</label></div>
+                </fieldset>
 
- <p>Escribe lo que quieras cambiando el tamaño del recuadro</p> <!--Text Area-->
+                <!-- Text Area -->
+                <div class="campo">
+                    <label for="message">Escribe lo que quieras cambiando el tamaño del recuadro</label>
+                    <textarea id="message" name="message" rows="10">Escribe aqui tu texto.</textarea>
+                </div>
 
-  <textarea name="message" rows="10" cols="30">Escribe aqui tu texto.</textarea>
+                <!-- Botón de enviar -->
+                <div class="campo">
+                    <p class="ayuda">Haz click para enviar:</p>
+                    <input class="boton" type="submit" value="Enviar">
+                </div>
 
- <p>Haz click para enviar:</p> <!--Boton de enviar-->
+            </form>
+        </section>
+    </main>
 
- <input type="submit" value="Enviar"> 
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer" id="informacion">
+        <section class="footer-content">
+            <img class="footer-logo" src="../img/CD.png" alt="Logo del Campus Digital">
 
-</form>
+            <section class="footer-text">
+                <h2>Información del proyecto</h2>
+                <p>
+                    Realizado por:
+                    Lorenzo Falo Nuez,
+                    David Lanzarote López,
+                    Ángel Alba Enatarriaga
+                    y Robert Alexandru Maican.
+                </p>
+                <p>Curso: <strong>1º ASIR</strong></p>
+            </section>
+
+            <p class="copyright">© 2026 Inventario Equipo-A</p>
+        </section>
+    </footer>
 
 </body>
-
-<footer>
-
-    <a href="../html/Tabla de inventario.html">Enlace a Web del inventario</a>
-    
-</footer>
 
 </html>
