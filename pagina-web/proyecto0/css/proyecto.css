@@ -606,6 +606,10 @@ tbody td img:hover {
   width: 20%;  /* Cambia el ancho al tamaño que quieras */
   height: 20%;  /* Mantiene la proporción original */
 }
+.imagen-fuente1 {
+  width: 20%;  /* Cambia el ancho al tamaño que quieras */
+  height: 20%;  /* Mantiene la proporción original */
+}
 /* TABLAS: ENVOLTORIO CON SCROLL HORIZONTAL */
 
 .table-scroll {
