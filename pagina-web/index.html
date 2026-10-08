@@ -1,27 +1,75 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="es">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Índice del Equipo A</title>
-    <link href="/proyecto0/css/global.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <h1>Índice de proyectos</h1>
-    <p>Publicaremos diferentes hipervínculos de cada proyecto que realicemos</p>
-    <ol type="I" start="0">
-      <li>
-        <a href="proyecto0/index0.html">Proyecto 0</a>
-      </li>
-      <li>
-        <a href="proyecto1/index1.html">Proyecto 1</a>
-      </li>
-      <li>
-        <a href="proyecto2/index2.html">Proyecto 2</a>
-      </li>
-    </ol>
-  </body>
+    <meta name="description" content="Índice de proyectos del Equipo-A">
+    <title>Índice del Equipo-A</title>
+    <link rel="stylesheet" href="proyecto0/css/proyecto.css">
+</head>
+
+<body>
+
+    <!-- CABECERA PRINCIPAL -->
+    <header class="site-header" id="inicio">
+        <section class="header-content">
+            <img class="header-logo" src="proyecto0/img/CD.png" alt="Logo del Campus Digital">
+
+            <section class="header-text">
+                <p class="header-equipo">EQUIPO-A</p>
+                <h1>ÍNDICE DE PROYECTOS</h1>
+                <p class="header-subtitle">
+                    Inventario de componentes y características del equipo
+                </p>
+            </section>
+        </section>
+    </header>
+
+    <!-- NAVEGACIÓN QUE PERMANECE VISIBLE AL DESPLAZARSE -->
+    <nav class="site-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#informacion">Información</a>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="inventory-area">
+        <section id="proyectos" aria-labelledby="proyectos-title">
+            <h2 id="proyectos-title" class="section-title">Proyectos</h2>
+            <p class="index-description">
+                Publicaremos diferentes hipervínculos de cada proyecto que realicemos.
+            </p>
+
+            <ol class="index-list" type="I" start="0">
+                <li><a href="proyecto0/index0.html">Proyecto 0</a></li>
+                <li><a href="proyecto1/index1.html">Proyecto 1</a></li>
+                <li><a href="proyecto2/index2.html">Proyecto 2</a></li>
+            </ol>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer" id="informacion">
+        <section class="footer-content">
+            <img class="footer-logo" src="proyecto0/img/CD.png" alt="Logo del Campus Digital">
+
+            <section class="footer-text">
+                <h2>Información del proyecto</h2>
+                <p>
+                    Realizado por:
+                    Lorenzo Falo Nuez,
+                    David Lanzarote López,
+                    Ángel Alba Enatarriaga
+                    y Robert Alexandru Maican.
+                </p>
+                <p>Curso: <strong>1º ASIR</strong></p>
+            </section>
+
+            <p class="copyright">© 2026 Inventario Equipo-A</p>
+        </section>
+    </footer>
+
+</body>
+
 </html>
