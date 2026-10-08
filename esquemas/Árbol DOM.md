@@ -1,61 +1,30 @@
 ##  **Arbol DOM** 
-
 document
-
-└── html
-
+└── html (lang="es")
     ├── head
-
-    │   	├── meta, title         
-
-    │  	 └── link (stylesheet)
-
+    │   ├── meta (charset="UTF-8")
+    │   ├── meta (viewport)
+    │   ├── title
+    │   └── link (href="../css/proyecto.css")
     └── body
-
         ├── aside (.intro-screen)
-
-	    ⌊\_\_section(intro-content)
-
-        ├── header (.site-header)
-
-	      ⌊\_\_section  (header-content)
-
-		  ⌊\_\_section  (header-text)
-
+        │   └── section (.intro-content)
+        ├── header (.site-header, #inicio)
+        │   └── section (.header-content)
         ├── nav (.site-nav)
-
         ├── main (.inventory-area)
-
-         |         ⌊\_\_section ( team-section)
-
-		 ⌊\_\_ ul (team-list)
-
-        │   ├── section (componentes) 
-
- 		 ⌊\_\_ Table 
-
- 		            ⌊\_\_ Thead
-
-		             ⌊\_\_ Tbody
-
-				 ⌊\_\_ Tr (Procesafor)
-
-				 ⌊\_\_ Tr (Memoria RAM)
-
-				 ⌊\_\_ Tr (Placa base)
-
-				 ⌊\_\_ Tr (Fuente de alimentación)
-
-				 ⌊\_\_ Tr (Disco)
-
-				 ⌊\_\_ Tr ( Ventilador)
-
-				 ⌊\_\_ Tr (Cable de alimentación)
-
-				 ⌊\_\_ Tr (Bateria Bios)
-
-        └── footer (.site-footer)
-
-	    ⌊\_\_ Section (footer-content)
-
-		⌊\_\_ section (footer-text)
+        │   ├── section (.team-section)
+        │   └── section (#componentes)
+        │       └── table
+        │           ├── thead
+        │           └── tbody
+        │               ├── tr (Procesador)
+        │               ├── tr (Memoria RAM)
+        │               ├── tr (Placa base)
+        │               ├── tr (Fuente de alimentación)
+        │               ├── tr (Disco)
+        │               ├── tr (Ventilador)
+        │               ├── tr (Cable de alimentación)
+        │               └── tr (Batería Bios)
+        └── footer (.site-footer, #informacion)
+            └── section (.footer-content)
