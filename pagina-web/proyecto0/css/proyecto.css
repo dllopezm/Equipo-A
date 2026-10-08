@@ -602,16 +602,7 @@ tbody td img:hover {
     color: var(--texto-suave);
     font-size: 0.875rem;
 }
-.imagen-fuente {
-  width: 20%;  /* Cambia el ancho al tamaño que quieras */
-  height: 20%;  /* Mantiene la proporción original */
-}
-.imagen-fuente1 {
-  width: 60%; /* Ajusta el % según qué tan grande quieras la imagen */
-  height: auto;
-  display: block;
-  margin: 20px auto;  /* Mantiene la proporción original */
-}
+
 /* Esto SOLO se aplicará a las imágenes dentro de documentacion0.html */
 /* En tu proyecto.css */
 .pagina-documentacion img {
