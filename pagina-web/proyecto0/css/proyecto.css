@@ -602,7 +602,10 @@ tbody td img:hover {
     color: var(--texto-suave);
     font-size: 0.875rem;
 }
-
+.imagen-fuente {
+  width: 20%;  /* Cambia el ancho al tamaño que quieras */
+  height: auto;  /* Mantiene la proporción original */
+}
 /* TABLAS: ENVOLTORIO CON SCROLL HORIZONTAL */
 
 .table-scroll {
