@@ -603,14 +603,11 @@ tbody td img:hover {
     font-size: 0.875rem;
 }
 
-/* Esto SOLO se aplicará a las imágenes dentro de documentacion0.html */
-/* En tu proyecto.css */
-.pagina-documentacion img {
-  width: 60% !important;
-  height: auto !important;
+.imagen-fuente {
+  width: 60%; /* Ajusta el % según qué tan grande quieras la imagen */
+  height: auto;
   display: block;
-  margin: 20px auto;
-}
+  margin: 20px auto; 
 /* TABLAS: ENVOLTORIO CON SCROLL HORIZONTAL */
 
 .table-scroll {
