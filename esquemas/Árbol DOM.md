@@ -1,4 +1,5 @@
 ##  **Arbol DOM** 
+```text
 document
 └── html (lang="es")
     ├── head
@@ -28,3 +29,4 @@ document
         │               └── tr (Batería Bios)
         └── footer (.site-footer, #informacion)
             └── section (.footer-content)
+```
