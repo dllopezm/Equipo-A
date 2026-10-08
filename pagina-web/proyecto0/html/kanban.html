@@ -1,53 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas</title>
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-  <style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
+    <meta name="description" content="Organización del trabajo del Equipo-A">
+    <title>Canvas | Equipo-A</title>
+    <link rel="stylesheet" href="../css/proyecto.css">
 </head>
+
 <body>
-  <h1>Organización del trabajo</h1>
-  <table>
-    <tr>
-      <th>X</th>
-      <th>Trabajo sin empezar</th>
-      <th>Trabajo en proceso</th>
-      <th>Trabajo hecho</th>
-    </tr>
-    <tr>
-      <th>Lorenzo</th>
-      <th></th>
-      <th>Comentar todo el HTML y todo el CSS</th>
-      <th>Empezar documentación; Crear canvas; Crear web y enlazar el neocities con github para volverla colaborativa</th>
-    </tr>
-      <tr>
-      <th>Ángel</th>
-      <th></th>
-      <th>Desarrollar documentación</th>
-      <th>Crear mockup de Balsamic; Pasar a html la tabla de excel; crear árbol gráfico de nuestra web; Gestionar la información de la base de datos en drawdb; </th>
-    </tr>
-      <tr>
-      <th>Lanzarote</th>
-      <th></th>
-      <th>Desarrollar documentación</th>
-      <th>Crear mockup de Balsamic; Arreglar el excel del inventario; Identificar y recopilar toda la información de todo el inventario disponible; Crear la base de datos en SQLite a partir de la tabla de excel; crear árbol gráfico de nuestra web</th>
-    </tr>
-    <tr>
-        <th>Alex</th>
-        <th></th>
-        <th></th>
-        <th>Crear <a href="https://lfalon.neocities.org/proyecto0/html/Tabla%20de%20inventario"</a> html de la información del inventario</th>
-    </tr>
-  </table>
-    <footer><br><a href="../index0.html">Ir atrás</a></footer>
+
+    <!-- CABECERA PRINCIPAL -->
+    <header class="site-header" id="inicio">
+        <section class="header-content">
+            <img class="header-logo" src="../img/CD.png" alt="Logo del Campus Digital">
+
+            <section class="header-text">
+                <p class="header-equipo">EQUIPO-A</p>
+                <h1>ORGANIZACIÓN DEL TRABAJO</h1>
+                <p class="header-subtitle">
+                    Reparto de tareas entre los integrantes del equipo
+                </p>
+            </section>
+        </section>
+    </header>
+
+    <!-- NAVEGACIÓN QUE PERMANECE VISIBLE AL DESPLAZARSE -->
+    <nav class="site-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#tareas">Tareas</a>
+        <a href="#informacion">Información</a>
+        <a href="../index0.html">Ir atrás</a>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="inventory-area">
+        <section id="tareas" aria-labelledby="tareas-title">
+            <h2 id="tareas-title" class="section-title">Reparto de tareas</h2>
+
+            <table class="kanban-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Integrante</th>
+                        <th scope="col">Trabajo sin empezar</th>
+                        <th scope="col">Trabajo en proceso</th>
+                        <th scope="col">Trabajo hecho</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row">Lorenzo</th>
+                        <td></td>
+                        <td>
+                            <ul>
+                                <li>Comentar todo el HTML y todo el CSS</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Empezar documentación</li>
+                                <li>Crear canvas</li>
+                                <li>Crear web y enlazar el neocities con github para volverla colaborativa</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Ángel</th>
+                        <td></td>
+                        <td>
+                            <ul>
+                                <li>Desarrollar documentación</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Crear mockup de Balsamic</li>
+                                <li>Pasar a html la tabla de excel</li>
+                                <li>Crear árbol gráfico de nuestra web</li>
+                                <li>Gestionar la información de la base de datos en drawdb</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Lanzarote</th>
+                        <td></td>
+                        <td>
+                            <ul>
+                                <li>Desarrollar documentación</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Crear mockup de Balsamic</li>
+                                <li>Arreglar el excel del inventario</li>
+                                <li>Identificar y recopilar toda la información de todo el inventario disponible</li>
+                                <li>Crear la base de datos en SQLite a partir de la tabla de excel</li>
+                                <li>Crear árbol gráfico de nuestra web</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Alex</th>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <ul>
+                                <li>Crear <a href="https://lfalon.neocities.org/proyecto0/html/Tabla%20de%20inventario">html de la información del inventario</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer" id="informacion">
+        <section class="footer-content">
+            <img class="footer-logo" src="../img/CD.png" alt="Logo del Campus Digital">
+
+            <section class="footer-text">
+                <h2>Información del proyecto</h2>
+                <p>
+                    Realizado por:
+                    Lorenzo Falo Nuez,
+                    David Lanzarote López,
+                    Ángel Alba Enatarriaga
+                    y Robert Alexandru Maican.
+                </p>
+                <p>Curso: <strong>1º ASIR</strong></p>
+            </section>
+
+            <p class="copyright">© 2026 Inventario Equipo-A</p>
+        </section>
+    </footer>
+
 </body>
+
 </html>
