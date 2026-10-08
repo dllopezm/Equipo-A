@@ -511,6 +511,373 @@ tbody td img:hover {
     text-decoration: underline;
 }
 
+/* PÁGINAS DE TEXTO (documentación, gracias...) */
+
+.inventory-area > .prose {
+    width: min(62rem, 100%);
+}
+
+.inventory-area > .narrow {
+    width: min(40rem, 100%);
+}
+
+.prose + .prose {
+    margin-top: 2.5rem;
+}
+
+.prose h2 {
+    margin: 0 0 0.8rem;
+    font-size: 1.5rem;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+}
+
+.prose h3 {
+    margin: 1.75rem 0 0.6rem;
+    color: var(--oscuro);
+    font-size: 1.1rem;
+    font-weight: 750;
+}
+
+.prose p {
+    margin: 0 0 1rem;
+}
+
+.prose ul,
+.prose ol {
+    margin: 0 0 1rem;
+    padding-left: 1.4rem;
+}
+
+.prose li {
+    margin: 0.3rem 0;
+}
+
+.prose li::marker {
+    color: var(--principal-hover);
+}
+
+.prose li ul {
+    margin: 0.4rem 0;
+}
+
+.prose a:link,
+.prose a:visited {
+    color: var(--oscuro);
+    text-decoration: underline;
+    text-decoration-color: var(--principal);
+    text-decoration-thickness: 0.125rem;
+    text-underline-offset: 0.15rem;
+}
+
+.prose a:hover {
+    color: var(--principal-hover);
+}
+
+.prose-volver {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.doc-figure {
+    margin: 1.5rem auto;
+    text-align: center;
+}
+
+.doc-figure img {
+    display: block;
+    width: min(100%, 32rem);
+    height: auto;
+    margin-inline: auto;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+.doc-figure--grande img {
+    width: min(100%, 44rem);
+}
+
+.doc-figure figcaption {
+    margin-top: 0.6rem;
+    color: var(--texto-suave);
+    font-size: 0.875rem;
+}
+
+/* TABLAS: ENVOLTORIO CON SCROLL HORIZONTAL */
+
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    border: 0.0625rem solid var(--borde);
+    border-radius: var(--radio);
+    background: var(--superficie);
+    box-shadow: var(--sombra);
+}
+
+/* MATRIZ DE COMPATIBILIDAD */
+
+.matrix-table {
+    display: table;
+    width: max-content;
+    min-width: 100%;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    text-align: center;
+}
+
+.matrix-table thead th {
+    padding: 0.75rem 0.6rem;
+    border-left: 0.0625rem solid rgb(255 255 255 / 12%);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.matrix-table .component-header th {
+    min-width: 8rem;
+    background: var(--principal-suave);
+    border-left-color: var(--borde);
+    color: var(--oscuro);
+    font-size: 0.72rem;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.matrix-table tbody td {
+    min-width: 0;
+    width: auto;
+    padding: 0.7rem 0.6rem;
+    color: inherit;
+    font-family: inherit;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.matrix-table .row-title {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    min-width: 11rem;
+    text-align: left;
+}
+
+.matrix-table thead .row-title {
+    z-index: 2;
+    background: var(--oscuro);
+}
+
+.matrix-table .component-header .row-title {
+    background: var(--principal-suave);
+}
+
+.matrix-table tbody td.row-title {
+    background: var(--superficie);
+    border-right: 0.0625rem solid var(--borde);
+    color: var(--oscuro);
+    font-size: 0.85rem;
+    font-weight: 750;
+}
+
+.matrix-table tbody tr:nth-child(even) td.row-title {
+    background: var(--superficie-alt);
+}
+
+.matrix-table tbody tr:hover td.row-title {
+    background: var(--principal-suave);
+}
+
+.matrix-table td.compatible {
+    background: rgb(46 125 50 / 10%);
+    color: #2e6b32;
+    font-weight: 800;
+}
+
+.matrix-table td.empty {
+    color: var(--borde-fuerte);
+}
+
+/* KANBAN (ORGANIZACIÓN DEL TRABAJO) */
+
+.kanban-table tbody td:nth-child(2) {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.kanban-table tbody td:last-child {
+    width: auto;
+    text-align: left;
+}
+
+.kanban-table tbody td:empty::after {
+    color: var(--borde-fuerte);
+    content: "—";
+}
+
+.kanban-table a:link,
+.kanban-table a:visited {
+    color: var(--oscuro);
+    text-decoration: underline;
+    text-decoration-color: var(--principal);
+    text-decoration-thickness: 0.125rem;
+    text-underline-offset: 0.15rem;
+}
+
+.kanban-table tbody td:last-child a {
+    display: inline;
+    padding: 0;
+    border-radius: 0;
+}
+
+.kanban-table tbody td:last-child a:hover {
+    background: none;
+    color: var(--principal-hover);
+}
+
+/* FORMULARIO */
+
+.formulario {
+    display: grid;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: var(--superficie);
+    border: 0.0625rem solid var(--borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+.formulario .campo {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.formulario label {
+    font-weight: 650;
+}
+
+.formulario fieldset {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0.9rem 1.1rem 1rem;
+    border: 0.0625rem solid var(--borde);
+    border-radius: 0.75rem;
+}
+
+.formulario legend {
+    padding: 0 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 750;
+}
+
+.formulario .opcion {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.formulario .opcion input {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0;
+    accent-color: var(--principal-hover);
+}
+
+.formulario .opcion label {
+    font-weight: 500;
+}
+
+.formulario input[type="text"],
+.formulario textarea {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border: 0.0625rem solid var(--borde-fuerte);
+    border-radius: 0.5rem;
+    background: var(--superficie-alt);
+    color: var(--texto);
+    font: inherit;
+}
+
+.formulario textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+.formulario .ayuda {
+    margin: 0;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+.formulario .boton {
+    justify-self: start;
+    padding: 0.7rem 1.6rem;
+    border: 0;
+    border-radius: 0.6rem;
+    background: var(--principal);
+    color: var(--oscuro);
+    font: inherit;
+    font-weight: 750;
+    cursor: pointer;
+    transition: background-color 150ms ease;
+}
+
+.formulario .boton:hover {
+    background: var(--principal-hover);
+}
+
+/* PÁGINA DE CONFIRMACIÓN */
+
+.mensaje-card {
+    padding: 2.5rem 1.5rem;
+    background: var(--superficie);
+    border: 0.0625rem solid var(--borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    text-align: center;
+}
+
+.mensaje-card .section-title {
+    font-size: 1.6rem;
+}
+
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1.5rem 0 0;
+}
+
+.boton-enlace:link,
+.boton-enlace:visited {
+    padding: 0.65rem 1.3rem;
+    border: 0.0625rem solid var(--principal);
+    border-radius: 0.6rem;
+    background: var(--principal);
+    color: var(--oscuro);
+    font-weight: 750;
+    text-decoration: none;
+    transition: background-color 150ms ease;
+}
+
+.boton-enlace:hover {
+    background: var(--principal-hover);
+    color: var(--oscuro);
+}
+
+.boton-enlace--secundario:link,
+.boton-enlace--secundario:visited {
+    background: var(--superficie);
+    border-color: var(--borde-fuerte);
+}
+
+.boton-enlace--secundario:hover {
+    background: var(--principal-suave);
+    border-color: var(--principal);
+}
+
 /* PIE DE PÁGINA: OCUPA APROXIMADAMENTE EL 10% */
 
 .site-footer {
@@ -741,6 +1108,8 @@ tbody td img:hover {
     .site-nav a,
     .team-list li,
     .index-list li,
+    .boton-enlace,
+    .formulario .boton,
     tbody td:last-child a,
     tbody td img {
         transition: none;
