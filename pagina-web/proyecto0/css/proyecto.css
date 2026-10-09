@@ -604,10 +604,10 @@ tbody td img:hover {
 }
 
 .imagen-fuente {
-  width: 60%; /* Ajusta el % según qué tan grande quieras la imagen */
+  width: 0.6rem; /* Ajusta el % según qué tan grande quieras la imagen */
   height: auto;
   display: block;
-  margin: 20px auto; 
+  margin: 0.002rem; 
 }
 /* TABLAS: ENVOLTORIO CON SCROLL HORIZONTAL */
 
