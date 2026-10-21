@@ -1,39 +1,79 @@
+/*Todos los colores de la hoja se definen aquí. Para cambiar la paleta
+   basta con modificar estos valores.*/
+
 :root {
-    /* Colores principales de la interfaz */
-    --fondo: #f8f8f4;
-    --superficie: #ffffff;
-    --superficie-alt: #fcfbf8;
-    --texto: #2a2617;
-    --texto-suave: #76735f;
-    --principal: #ebc725;
-    --principal-hover: #d6b31c;
-    --principal-suave: #fff7c7;
-    --borde: #e8e7dc;
-    --borde-fuerte: #d9d6c7;
-    --oscuro: #412f0e;
+    /*Colores principales de la interfaz*/
+    --fondo: #f8f8f4;               /* Fondo general de la página */
+    --superficie: #ffffff;          /* Tarjetas, tablas y cabecera */
+    --superficie-alt: #fcfbf8;      /* Filas pares y campos de formulario */
+    --texto: #2a2617;               /* Texto principal */
+    --texto-suave: #76735f;         /* Texto secundario y descripciones */
+    --principal: #ebc725;           /* Amarillo de marca */
+    --principal-hover: #d6b31c;     /* Amarillo de marca más oscuro (hover) */
+    --principal-suave: #fff7c7;     /* Amarillo muy claro (fondos resaltados) */
+    --borde: #e8e7dc;               /* Bordes y separadores */
+    --borde-fuerte: #d9d6c7;        /* Bordes de campos y elementos vacíos */
+    --oscuro: #412f0e;              /* Marrón oscuro: nav, pie y cabeceras de tabla */
     --blanco: #ffffff;
-    --sombra: 0 0.625rem 1.875rem rgb(42 39 15 / 8%);
-    --radio: 0.875rem;
+    --negro: #000000;
+
+    /*Estado "compatible" de la matriz*/
+    --exito: #2e6b32;                       /* Texto del ✓ */
+    --exito-suave: rgb(46 125 50 / 10%);
+
+    /*Enlaces globales*/
+    --enlace: #ffc400;              /* Enlace sin visitar */
+    --enlace-visitado: #806d00;     /* Enlace visitado */
+    --enlace-hover: #ffe139;        /* Enlace con el ratón encima */
+    --enlace-activo: #0000ff;       /* Enlace pulsado */
+
+    /*Blancos translúcidos (sobre fondos oscuros)*/
+    --blanco-10: rgb(255 255 255 / 10%);    /* Borde inferior del nav */
+    --blanco-12: rgb(255 255 255 / 12%);    /* Divisores de la cabecera de la matriz */
+    --blanco-72: rgb(255 255 255 / 72%);    /* Subtítulo de la intro */
+    --blanco-78: rgb(255 255 255 / 78%);    /* Texto del pie */
+    --blanco-82: rgb(255 255 255 / 82%);    /* Enlaces del nav */
+
+    /*Brillos de fondo (amarillo translúcido)*/
+    --brillo-fondo: rgb(235 199 37 / 12%);  /* Degradado del body */
+    --brillo-intro: rgb(235 199 37 / 16%);  /* Degradado de la intro */
+
+    /*Sombras*/
+    --sombra: 0 0.625rem 1.875rem rgb(42 39 15 / 8%);           /* Tablas, cabecera, tarjetas */
+    --sombra-suave: 0 0.125rem 0.5rem rgb(42 39 15 / 4%);       /* Píldoras y listas del índice */
+    --sombra-nav: 0 0.25rem 1rem rgb(65 47 14 / 18%);           /* Barra de navegación */
+    --sombra-logo: drop-shadow(0 0.75rem 1rem rgb(0 0 0 / 25%));            /* Logo de la intro */
+    --sombra-imagen: drop-shadow(0 0.5rem 0.75rem rgb(42 39 15 / 12%));     /* Imágenes de producto */
+    --sombra-imagen-hover: drop-shadow(0 0.75rem 1.125rem rgb(42 39 15 / 18%)); /* Imágenes con hover */
+
+    /*Medidas y transiciones*/
+    --radio: 0.875rem;              /* Radio de esquinas de tablas y tarjetas */
+    --ancho-max: 87.5rem;           /* Ancho máximo del contenido (1400px) */
+    --transicion: 150ms ease;       /* Transición estándar de hover */
 }
 
-/* AJUSTES GENERALES */
 
+/*AJUSTES GENERALES*/
+
+/* El padding y el borde cuentan dentro del ancho de cada elemento */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
+/* Desplazamiento suave entre anclas; el margen evita que el nav tape el título */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 4rem;
 }
 
+/* Fondo con un ligero brillo amarillo arriba a la izquierda y tipografía del sistema */
 body {
     min-height: 100vh;
     margin: 0;
     background:
-        radial-gradient(circle at top left, rgb(235 199 37 / 12%), transparent 35rem),
+        radial-gradient(circle at top left, var(--brillo-fondo), transparent 35rem),
         var(--fondo);
     color: var(--texto);
     font-family:
@@ -47,8 +87,36 @@ body {
     line-height: 1.6;
 }
 
-/* PANTALLA DE INTRODUCCIÓN */
+/* Contorno visible al navegar con teclado */
+:focus-visible {
+    outline: 0.1875rem solid var(--principal);
+    outline-offset: 0.1875rem;
+}
 
+
+/*Los componentes de más abajo (nav, índices, texto...) los sobrescriben.*/
+
+a:link {
+    color: var(--enlace);
+}
+
+a:visited {
+    color: var(--enlace-visitado);
+}
+
+a:hover {
+    color: var(--enlace-hover);
+}
+
+a:active {
+    color: var(--enlace-activo);
+}
+
+
+/*Capa a pantalla completa que se muestra al abrir la Tabla de inventario
+   y desaparece sola a los 2,4 s.*/
+
+/* Capa que cubre toda la ventana y se desvanece al terminar la animación */
 .intro-screen {
     position: fixed;
     inset: 0;
@@ -56,12 +124,13 @@ body {
     display: grid;
     place-items: center;
     background:
-        radial-gradient(circle at center, rgb(235 199 37 / 16%), transparent 30rem),
+        radial-gradient(circle at center, var(--brillo-intro), transparent 30rem),
         var(--oscuro);
     color: var(--blanco);
     animation: intro-salida 700ms ease 2.4s forwards;
 }
 
+/* Bloque centrado con logo, títulos y línea */
 .intro-content {
     display: grid;
     justify-items: center;
@@ -75,7 +144,7 @@ body {
     height: clamp(6rem, 15vw, 10rem);
     margin-bottom: 1.25rem;
     object-fit: contain;
-    filter: drop-shadow(0 0.75rem 1rem rgb(0 0 0 / 25%));
+    filter: var(--sombra-logo);
     animation: logo-entrada 1200ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
@@ -97,10 +166,11 @@ body {
 
 .intro-subtitle {
     margin: 0.75rem 0 0;
-    color: rgb(255 255 255 / 72%);
+    color: var(--blanco-72);
     font-size: clamp(0.85rem, 2vw, 1rem);
 }
 
+/* Línea decorativa que se despliega desde el centro */
 .intro-line {
     width: clamp(5rem, 20vw, 9rem);
     height: 0.2rem;
@@ -111,6 +181,7 @@ body {
     animation: linea-entrada 900ms ease 400ms both;
 }
 
+/* Entrada del bloque: sube desde abajo mientras aparece */
 @keyframes intro-entrada {
     from {
         opacity: 0;
@@ -123,6 +194,7 @@ body {
     }
 }
 
+/* Entrada del logo: crece y gira ligeramente */
 @keyframes logo-entrada {
     from {
         opacity: 0;
@@ -135,6 +207,7 @@ body {
     }
 }
 
+/* Entrada de la línea: se expande en horizontal */
 @keyframes linea-entrada {
     from {
         opacity: 0;
@@ -147,6 +220,7 @@ body {
     }
 }
 
+/* Salida de la capa: se desvanece y deja de bloquear los clics */
 @keyframes intro-salida {
     0% {
         opacity: 1;
@@ -165,29 +239,10 @@ body {
     }
 }
 
-/* Links */
 
-/* unvisited link */
-a:link {
-  color: rgb(255, 196, 0);
-}
+/*ESTRUCTURA DE LA PÁGINA*/
 
-/* visited link */
-a:visited {
-  color: rgb(128, 109, 0);
-}
-
-/* mouse over link */
-a:hover {
-  color: rgb(255, 225, 57);
-}
-
-/* selected link */
-a:active {
-  color: blue;
-}
-
-/* CABECERA: OCUPA APROXIMADAMENTE EL 20% INICIAL */
+/*Cabecera (ocupa aproximadamente el 20 % inicial)*/
 
 .site-header {
     min-height: 20vh;
@@ -199,8 +254,9 @@ a:active {
     box-shadow: var(--sombra);
 }
 
+/* Contenedor centrado: logo a la izquierda y textos a la derecha */
 .header-content {
-    width: min(87.5rem, 100%);
+    width: min(var(--ancho-max), 100%);
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -218,6 +274,7 @@ a:active {
     text-align: left;
 }
 
+/* Etiqueta "EQUIPO-A" sobre el título */
 .header-equipo {
     margin: 0 0 0.25rem;
     color: var(--principal-hover);
@@ -240,7 +297,7 @@ a:active {
     font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
 
-/* NAVEGACIÓN: SE QUEDA PEGADA ARRIBA AL HACER SCROLL */
+/*Navegación (se queda pegada arriba al hacer scroll)*/
 
 .site-nav {
     position: sticky;
@@ -252,21 +309,21 @@ a:active {
     width: 100%;
     padding: 0.65rem 1rem;
     background: var(--oscuro);
-    border-bottom: 0.0625rem solid rgb(255 255 255 / 10%);
-    box-shadow: 0 0.25rem 1rem rgb(65 47 14 / 18%);
+    border-bottom: 0.0625rem solid var(--blanco-10);
+    box-shadow: var(--sombra-nav);
 }
 
 .site-nav a {
     padding: 0.4rem 0.85rem;
     border-radius: 0.5rem;
-    color: rgb(255 255 255 / 82%);
+    color: var(--blanco-82);
     font-size: 0.85rem;
     font-weight: 650;
     text-decoration: none;
     transition:
-        background-color 150ms ease,
-        color 150ms ease,
-        transform 150ms ease;
+        background-color var(--transicion),
+        color var(--transicion),
+        transform var(--transicion);
 }
 
 .site-nav a:hover {
@@ -276,11 +333,10 @@ a:active {
 }
 
 .site-nav a:focus-visible {
-    outline: 0.1875rem solid var(--principal);
     outline-offset: 0.15rem;
 }
 
-/* CONTENIDO PRINCIPAL: OCUPA APROXIMADAMENTE EL 70% */
+/*Contenido principal (ocupa aproximadamente el 70 %)*/
 
 .inventory-area {
     min-height: 70vh;
@@ -288,22 +344,82 @@ a:active {
     padding: 2rem 3rem;
 }
 
+/* Cada sección se centra con el ancho máximo del contenido */
 .inventory-area > section {
-    width: min(87.5rem, 100%);
+    width: min(var(--ancho-max), 100%);
     margin-inline: auto;
 }
 
-/* EQUIPO DE TRABAJO */
-
-.team-section {
-    margin-bottom: 2rem;
+/* Variantes de ancho para páginas de texto y formularios */
+.inventory-area > .prose {
+    width: min(62rem, 100%);
 }
+
+.inventory-area > .narrow {
+    width: min(40rem, 100%);
+}
+
+/*Pie de página (ocupa aproximadamente el 10 %)*/
+
+.site-footer {
+    min-height: 10vh;
+    padding: 1.5rem 3rem;
+    background: var(--oscuro);
+    color: var(--blanco);
+}
+
+.footer-content {
+    width: min(var(--ancho-max), 100%);
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-inline: auto;
+}
+
+.footer-logo {
+    width: clamp(3rem, 5vw, 5rem);
+    height: clamp(3rem, 5vw, 5rem);
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* El texto ocupa el espacio libre y empuja el copyright a la derecha */
+.footer-text {
+    flex: 1;
+}
+
+.site-footer h2 {
+    margin: 0 0 0.2rem;
+    font-size: 1rem;
+}
+
+.site-footer p {
+    margin: 0.15rem 0;
+    color: var(--blanco-78);
+    font-size: 0.8rem;
+}
+
+.copyright {
+    white-space: nowrap;
+}
+
+
+/*COMPONENTES DEL CONTENIDO*/
+
+/*Títulos de sección*/
 
 .team-section h2,
 .section-title {
     margin: 0 0 0.8rem;
     font-size: 1.2rem;
     font-weight: 750;
+}
+
+
+/*Equipo de trabajo (píldoras con los integrantes)*/
+
+.team-section {
+    margin-bottom: 2rem;
 }
 
 .team-list {
@@ -322,12 +438,12 @@ a:active {
     border-radius: 999rem;
     color: var(--texto-suave);
     font-size: 0.875rem;
-    box-shadow: 0 0.125rem 0.5rem rgb(42 39 15 / 4%);
+    box-shadow: var(--sombra-suave);
     transition:
-        background-color 150ms ease,
-        border-color 150ms ease,
-        color 150ms ease,
-        transform 150ms ease;
+        background-color var(--transicion),
+        border-color var(--transicion),
+        color var(--transicion),
+        transform var(--transicion);
 }
 
 .team-list li:hover {
@@ -337,7 +453,10 @@ a:active {
     transform: translateY(-0.0625rem);
 }
 
-/* TABLA DEL INVENTARIO */
+
+/*Tablas*/
+
+/*Base común a todas las tablas */
 
 table {
     width: 100%;
@@ -350,8 +469,15 @@ table {
     text-align: left;
 }
 
-thead th {
+/* Mismo espaciado en cabecera y celdas */
+thead th,
+tbody th,
+tbody td {
     padding: 1rem 1.1rem;
+}
+
+/* Cabecera oscura con texto en mayúsculas */
+thead th {
     background: var(--oscuro);
     color: var(--blanco);
     font-size: 0.78rem;
@@ -363,11 +489,11 @@ thead th {
 
 tbody th,
 tbody td {
-    padding: 1rem 1.1rem;
     border-bottom: 0.0625rem solid var(--borde);
     vertical-align: middle;
 }
 
+/* Primera columna: nombre del componente o integrante */
 tbody th {
     width: 16%;
     color: var(--principal-hover);
@@ -375,6 +501,7 @@ tbody th {
     font-weight: 750;
 }
 
+/* Filas alternas y resaltado al pasar el ratón */
 tbody tr:nth-child(even) {
     background: var(--superficie-alt);
 }
@@ -383,12 +510,13 @@ tbody tr:hover {
     background: var(--principal-suave);
 }
 
+/* La última fila no lleva línea inferior */
 tbody tr:last-child th,
 tbody tr:last-child td {
     border-bottom: 0;
 }
 
-/* LISTAS DE CARACTERÍSTICAS */
+/*Listas de características dentro de las celdas*/
 
 table ul {
     margin: 0;
@@ -417,7 +545,7 @@ table ul ul li::marker {
     color: var(--borde-fuerte);
 }
 
-/* REFERENCIAS DE LOS COMPONENTES */
+/*Columna de referencias (2.ª columna) en fuente monoespaciada*/
 
 tbody td:nth-child(2) {
     color: var(--texto-suave);
@@ -429,7 +557,7 @@ tbody td:nth-child(2) {
     font-size: 0.85rem;
 }
 
-/* IMÁGENES Y ENLACES DE PRODUCTOS */
+/*Última columna: imágenes y enlaces de producto*/
 
 tbody td:last-child {
     width: 22%;
@@ -440,7 +568,7 @@ tbody td:last-child a {
     display: block;
     padding: 0.4rem;
     border-radius: 0.75rem;
-    transition: background-color 150ms ease;
+    transition: background-color var(--transicion);
 }
 
 tbody td:last-child a:hover {
@@ -454,7 +582,7 @@ tbody td img {
     margin-inline: auto;
     object-fit: contain;
     border-radius: 0.75rem;
-    filter: drop-shadow(0 0.5rem 0.75rem rgb(42 39 15 / 12%));
+    filter: var(--sombra-imagen);
     transition:
         transform 180ms ease,
         filter 180ms ease;
@@ -462,16 +590,149 @@ tbody td img {
 
 tbody td img:hover {
     transform: scale(1.04);
-    filter: drop-shadow(0 0.75rem 1.125rem rgb(42 39 15 / 18%));
+    filter: var(--sombra-imagen-hover);
 }
 
-/* PÁGINAS DE ÍNDICE (index.html E index0.html) */
+/*Envoltorio con scroll horizontal para tablas muy anchas*/
+
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    border: 0.0625rem solid var(--borde);
+    border-radius: var(--radio);
+    background: var(--superficie);
+    box-shadow: var(--sombra);
+}
+
+/*Matriz de compatibilidad (la tabla se ensancha según su contenido) */
+
+.matrix-table {
+    display: table;
+    width: max-content;
+    min-width: 100%;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    text-align: center;
+}
+
+/* Fila 1: categorías (RAM, CPU...) */
+.matrix-table thead th {
+    padding: 0.75rem 0.6rem;
+    border-left: 0.0625rem solid var(--blanco-12);
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Fila 2: modelos de componentes, en amarillo claro */
+.matrix-table .component-header th {
+    min-width: 8rem;
+    background: var(--principal-suave);
+    border-left-color: var(--borde);
+    color: var(--oscuro);
+    font-size: 0.72rem;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+/* Celdas de datos: anulan el estilo de la tabla de inventario */
+.matrix-table tbody td {
+    min-width: 0;
+    width: auto;
+    padding: 0.7rem 0.6rem;
+    color: inherit;
+    font-family: inherit;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Primera columna (placa base): fija al desplazar en horizontal */
+.matrix-table .row-title {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    min-width: 11rem;
+    text-align: left;
+}
+
+.matrix-table thead .row-title {
+    z-index: 2;
+    background: var(--oscuro);
+}
+
+.matrix-table .component-header .row-title {
+    background: var(--principal-suave);
+}
+
+.matrix-table tbody td.row-title {
+    background: var(--superficie);
+    border-right: 0.0625rem solid var(--borde);
+    color: var(--oscuro);
+    font-size: 0.85rem;
+    font-weight: 750;
+}
+
+.matrix-table tbody tr:nth-child(even) td.row-title {
+    background: var(--superficie-alt);
+}
+
+.matrix-table tbody tr:hover td.row-title {
+    background: var(--principal-suave);
+}
+
+/* Celda compatible (✓ en verde) y celda vacía (-) */
+.matrix-table td.compatible {
+    background: var(--exito-suave);
+    color: var(--exito);
+    font-weight: 800;
+}
+
+.matrix-table td.empty {
+    color: var(--borde-fuerte);
+}
+
+/*Kanban (organización del trabajo) */
+
+/* Anula la fuente monoespaciada y el ancho de la tabla de inventario */
+.kanban-table tbody td:nth-child(2) {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.kanban-table tbody td:last-child {
+    width: auto;
+    text-align: left;
+}
+
+/* Las celdas vacías muestran un guion */
+.kanban-table tbody td:empty::after {
+    color: var(--borde-fuerte);
+    content: "—";
+}
+
+/* Los enlaces de la última columna son texto, no botones de imagen */
+.kanban-table tbody td:last-child a {
+    display: inline;
+    padding: 0;
+    border-radius: 0;
+}
+
+.kanban-table tbody td:last-child a:hover {
+    background: none;
+    color: var(--principal-hover);
+}
+
+
+/*Páginas de índice (index.html e index0.html)*/
 
 .index-description {
     margin: 0 0 1.5rem;
     color: var(--texto-suave);
 }
 
+/* Lista numerada: cada elemento se muestra como una tarjeta */
 .index-list {
     display: grid;
     gap: 0.75rem;
@@ -484,13 +745,13 @@ tbody td img:hover {
     background: var(--superficie);
     border: 0.0625rem solid var(--borde);
     border-radius: var(--radio);
-    box-shadow: 0 0.125rem 0.5rem rgb(42 39 15 / 4%);
+    box-shadow: var(--sombra-suave);
     color: var(--principal-hover);
     font-weight: 750;
     transition:
-        background-color 150ms ease,
-        border-color 150ms ease,
-        transform 150ms ease;
+        background-color var(--transicion),
+        border-color var(--transicion),
+        transform var(--transicion);
 }
 
 .index-list li:hover {
@@ -499,6 +760,7 @@ tbody td img:hover {
     transform: translateY(-0.0625rem);
 }
 
+/* El amarillo global se lee mal sobre fondo blanco: se usa el marrón oscuro */
 .index-list a:link,
 .index-list a:visited {
     color: var(--oscuro);
@@ -511,15 +773,8 @@ tbody td img:hover {
     text-decoration: underline;
 }
 
-/* PÁGINAS DE TEXTO (documentación, gracias...) */
 
-.inventory-area > .prose {
-    width: min(62rem, 100%);
-}
-
-.inventory-area > .narrow {
-    width: min(40rem, 100%);
-}
+/*Páginas de texto (documentación)*/
 
 .prose + .prose {
     margin-top: 2.5rem;
@@ -561,8 +816,11 @@ tbody td img:hover {
     margin: 0.4rem 0;
 }
 
+/* Enlaces legibles sobre fondo claro (también los de las celdas del kanban) */
 .prose a:link,
-.prose a:visited {
+.prose a:visited,
+.kanban-table a:link,
+.kanban-table a:visited {
     color: var(--oscuro);
     text-decoration: underline;
     text-decoration-color: var(--principal);
@@ -570,15 +828,18 @@ tbody td img:hover {
     text-underline-offset: 0.15rem;
 }
 
-.prose a:hover {
+.prose a:hover,
+.kanban-table a:hover {
     color: var(--principal-hover);
 }
 
+/* Enlaces "Volver arriba / Ir atrás" al final */
 .prose-volver {
     margin-top: 2rem;
     text-align: center;
 }
 
+/* Figuras con pie de foto */
 .doc-figure {
     margin: 1.5rem auto;
     text-align: center;
@@ -593,6 +854,7 @@ tbody td img:hover {
     box-shadow: var(--sombra);
 }
 
+/* Variante más ancha para capturas grandes */
 .doc-figure--grande img {
     width: min(100%, 44rem);
 }
@@ -603,146 +865,10 @@ tbody td img:hover {
     font-size: 0.875rem;
 }
 
-.imagen-fuente {
-  width: 0.6rem; /* Ajusta el % según qué tan grande quieras la imagen */
-  height: auto;
-  display: block;
-  margin: 0.002rem; 
-}
-/* TABLAS: ENVOLTORIO CON SCROLL HORIZONTAL */
 
-.table-scroll {
-    width: 100%;
-    overflow-x: auto;
-    border: 0.0625rem solid var(--borde);
-    border-radius: var(--radio);
-    background: var(--superficie);
-    box-shadow: var(--sombra);
-}
+/*Formulario*/
 
-/* MATRIZ DE COMPATIBILIDAD */
-
-.matrix-table {
-    display: table;
-    width: max-content;
-    min-width: 100%;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-    overflow: visible;
-    text-align: center;
-}
-
-.matrix-table thead th {
-    padding: 0.75rem 0.6rem;
-    border-left: 0.0625rem solid rgb(255 255 255 / 12%);
-    text-align: center;
-    vertical-align: middle;
-}
-
-.matrix-table .component-header th {
-    min-width: 8rem;
-    background: var(--principal-suave);
-    border-left-color: var(--borde);
-    color: var(--oscuro);
-    font-size: 0.72rem;
-    letter-spacing: 0;
-    text-transform: none;
-}
-
-.matrix-table tbody td {
-    min-width: 0;
-    width: auto;
-    padding: 0.7rem 0.6rem;
-    color: inherit;
-    font-family: inherit;
-    font-size: 1rem;
-    text-align: center;
-}
-
-.matrix-table .row-title {
-    position: sticky;
-    left: 0;
-    z-index: 1;
-    min-width: 11rem;
-    text-align: left;
-}
-
-.matrix-table thead .row-title {
-    z-index: 2;
-    background: var(--oscuro);
-}
-
-.matrix-table .component-header .row-title {
-    background: var(--principal-suave);
-}
-
-.matrix-table tbody td.row-title {
-    background: var(--superficie);
-    border-right: 0.0625rem solid var(--borde);
-    color: var(--oscuro);
-    font-size: 0.85rem;
-    font-weight: 750;
-}
-
-.matrix-table tbody tr:nth-child(even) td.row-title {
-    background: var(--superficie-alt);
-}
-
-.matrix-table tbody tr:hover td.row-title {
-    background: var(--principal-suave);
-}
-
-.matrix-table td.compatible {
-    background: rgb(46 125 50 / 10%);
-    color: #2e6b32;
-    font-weight: 800;
-}
-
-.matrix-table td.empty {
-    color: var(--borde-fuerte);
-}
-
-/* KANBAN (ORGANIZACIÓN DEL TRABAJO) */
-
-.kanban-table tbody td:nth-child(2) {
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-}
-
-.kanban-table tbody td:last-child {
-    width: auto;
-    text-align: left;
-}
-
-.kanban-table tbody td:empty::after {
-    color: var(--borde-fuerte);
-    content: "—";
-}
-
-.kanban-table a:link,
-.kanban-table a:visited {
-    color: var(--oscuro);
-    text-decoration: underline;
-    text-decoration-color: var(--principal);
-    text-decoration-thickness: 0.125rem;
-    text-underline-offset: 0.15rem;
-}
-
-.kanban-table tbody td:last-child a {
-    display: inline;
-    padding: 0;
-    border-radius: 0;
-}
-
-.kanban-table tbody td:last-child a:hover {
-    background: none;
-    color: var(--principal-hover);
-}
-
-/* FORMULARIO */
-
+/* Tarjeta que contiene todos los campos */
 .formulario {
     display: grid;
     gap: 1.25rem;
@@ -753,6 +879,7 @@ tbody td img:hover {
     box-shadow: var(--sombra);
 }
 
+/* Etiqueta + campo apilados */
 .formulario .campo {
     display: grid;
     gap: 0.4rem;
@@ -762,6 +889,7 @@ tbody td img:hover {
     font-weight: 650;
 }
 
+/* Grupos de casillas y botones de radio */
 .formulario fieldset {
     display: grid;
     gap: 0.5rem;
@@ -794,7 +922,14 @@ tbody td img:hover {
     font-weight: 500;
 }
 
+/* Campos de texto, enlace, correo, número, desplegable y área de texto
+   (lista simple y no :is() para que el select siga siendo menos específico
+   y pueda ajustar su propio relleno más abajo) */
 .formulario input[type="text"],
+.formulario input[type="url"],
+.formulario input[type="email"],
+.formulario input[type="number"],
+.formulario select,
 .formulario textarea {
     width: 100%;
     padding: 0.65rem 0.8rem;
@@ -805,9 +940,40 @@ tbody td img:hover {
     font: inherit;
 }
 
+/* Resalte amarillo al escribir en un campo */
+.formulario :is(input[type="text"], input[type="url"], input[type="email"], input[type="number"], select, textarea):focus {
+    border-color: var(--principal);
+    outline: 0.1875rem solid var(--principal-suave);
+    outline-offset: 0;
+}
+
+/* Texto de ejemplo (placeholder) en gris suave */
+.formulario ::placeholder {
+    color: var(--texto-suave);
+    opacity: 0.7;
+}
+
 .formulario textarea {
     min-height: 8rem;
     resize: vertical;
+}
+
+/* Desplegable con flecha propia (se oculta la del navegador) */
+.formulario select {
+    appearance: none;
+    padding-right: 2.5rem;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23412f0e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-position: right 0.9rem center;
+    background-repeat: no-repeat;
+    background-size: 0.75rem 0.5rem;
+    cursor: pointer;
+}
+
+/* Lista de opciones desplegada (su aspecto final depende del navegador) */
+.formulario select option {
+    background: var(--superficie);
+    color: var(--texto);
 }
 
 .formulario .ayuda {
@@ -816,6 +982,7 @@ tbody td img:hover {
     font-size: 0.9rem;
 }
 
+/* Botón de envío */
 .formulario .boton {
     justify-self: start;
     padding: 0.7rem 1.6rem;
@@ -826,14 +993,15 @@ tbody td img:hover {
     font: inherit;
     font-weight: 750;
     cursor: pointer;
-    transition: background-color 150ms ease;
+    transition: background-color var(--transicion);
 }
 
 .formulario .boton:hover {
     background: var(--principal-hover);
 }
 
-/* PÁGINA DE CONFIRMACIÓN */
+
+/*Página de confirmación (gracias)*/
 
 .mensaje-card {
     padding: 2.5rem 1.5rem;
@@ -848,6 +1016,7 @@ tbody td img:hover {
     font-size: 1.6rem;
 }
 
+/* Fila de botones-enlace */
 .acciones {
     display: flex;
     flex-wrap: wrap;
@@ -856,6 +1025,7 @@ tbody td img:hover {
     margin: 1.5rem 0 0;
 }
 
+/* Botón principal (amarillo) */
 .boton-enlace:link,
 .boton-enlace:visited {
     padding: 0.65rem 1.3rem;
@@ -865,7 +1035,7 @@ tbody td img:hover {
     color: var(--oscuro);
     font-weight: 750;
     text-decoration: none;
-    transition: background-color 150ms ease;
+    transition: background-color var(--transicion);
 }
 
 .boton-enlace:hover {
@@ -873,6 +1043,7 @@ tbody td img:hover {
     color: var(--oscuro);
 }
 
+/* Botón secundario (blanco con borde) */
 .boton-enlace--secundario:link,
 .boton-enlace--secundario:visited {
     background: var(--superficie);
@@ -884,57 +1055,10 @@ tbody td img:hover {
     border-color: var(--principal);
 }
 
-/* PIE DE PÁGINA: OCUPA APROXIMADAMENTE EL 10% */
 
-.site-footer {
-    min-height: 10vh;
-    padding: 1.5rem 3rem;
-    background: var(--oscuro);
-    color: var(--blanco);
-}
+/*DISEÑO ADAPTABLE, Los ajustes se acumulan: cada bloque parte del anterior.*/
 
-.footer-content {
-    width: min(87.5rem, 100%);
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    margin-inline: auto;
-}
-
-.footer-logo {
-    width: clamp(3rem, 5vw, 5rem);
-    height: clamp(3rem, 5vw, 5rem);
-    flex-shrink: 0;
-    object-fit: contain;
-}
-
-.footer-text {
-    flex: 1;
-}
-
-.site-footer h2 {
-    margin: 0 0 0.2rem;
-    font-size: 1rem;
-}
-
-.site-footer p {
-    margin: 0.15rem 0;
-    color: rgb(255 255 255 / 78%);
-    font-size: 0.8rem;
-}
-
-.copyright {
-    white-space: nowrap;
-}
-
-/* ACCESIBILIDAD Y ESTADOS DE FOCO */
-
-:focus-visible {
-    outline: 0.1875rem solid var(--principal);
-    outline-offset: 0.1875rem;
-}
-
-/* TABLET */
+/*Tablet (hasta 900 px)*/
 
 @media (max-width: 56.25rem) {
     .site-header,
@@ -955,11 +1079,10 @@ tbody td img:hover {
     }
 }
 
-/* MÓVIL */
+/*Móvil (hasta 700 px)*/
 
 @media (max-width: 43.75rem) {
     .site-header {
-        min-height: 20vh;
         padding: 1.5rem 1rem;
     }
 
@@ -980,6 +1103,7 @@ tbody td img:hover {
         font-size: 0.8rem;
     }
 
+    /* El nav reparte los enlaces a lo ancho */
     .site-nav {
         padding: 0.5rem;
     }
@@ -992,7 +1116,6 @@ tbody td img:hover {
     }
 
     .inventory-area {
-        min-height: 70vh;
         padding: 1rem;
     }
 
@@ -1001,6 +1124,7 @@ tbody td img:hover {
         align-items: flex-start;
     }
 
+    /* Las tablas se desplazan en horizontal en lugar de desbordar la página */
     table {
         display: block;
         max-width: 100%;
@@ -1023,7 +1147,6 @@ tbody td img:hover {
     }
 
     .site-footer {
-        min-height: 10vh;
         padding: 1rem;
     }
 
@@ -1045,7 +1168,7 @@ tbody td img:hover {
     }
 }
 
-/* MÓVIL PEQUEÑO */
+/*Móvil pequeño (hasta 480 px)*/
 
 @media (max-width: 30rem) {
     .header-logo {
@@ -1086,14 +1209,17 @@ tbody td img:hover {
         height: 3rem;
     }
 
+    /* El copyright se oculta por falta de espacio */
     .copyright {
         display: none;
     }
 }
 
-/* REDUCCIÓN DE ANIMACIONES SI EL USUARIO LA SOLICITA */
+
+/*ACCESIBILIDAD: REDUCCIÓN DE ANIMACIONES, Respeta la preferencia del sistema de quien no quiere movimiento.*/
 
 @media (prefers-reduced-motion: reduce) {
+    /* La intro no se muestra */
     .intro-screen {
         animation: none;
         opacity: 0;
@@ -1111,6 +1237,7 @@ tbody td img:hover {
         scroll-behavior: auto;
     }
 
+    /* Sin transiciones en los elementos con hover */
     .site-nav a,
     .team-list li,
     .index-list li,
@@ -1122,7 +1249,8 @@ tbody td img:hover {
     }
 }
 
-/* VISTA DE IMPRESIÓN */
+
+/*VISTA DE IMPRESIÓN Versión sin sombras ni colores de fondo para ahorrar tinta.*/
 
 @media print {
     .site-nav {
@@ -1132,12 +1260,12 @@ tbody td img:hover {
 
     table {
         box-shadow: none;
-        border-color: #000000;
+        border-color: var(--negro);
     }
 
     thead th {
-        background: #ffffff;
-        color: #000000;
+        background: var(--blanco);
+        color: var(--negro);
     }
 
     tbody tr:hover {
