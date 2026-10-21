@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Formulario de prueba del Equipo-A">
-    <title>Formulario Test | Equipo-A</title>
+    <title>Formulario | Equipo-A</title>
     <link rel="stylesheet" href="../css/proyecto.css">
 </head>
 
@@ -18,9 +18,9 @@
 
             <section class="header-text">
                 <p class="header-equipo">EQUIPO-A</p>
-                <h1>PRUEBA DE FORMULARIO</h1>
+                <h1>AÑADIR COMPONENTES</h1>
                 <p class="header-subtitle">
-                    Formulario de prueba con los distintos tipos de campos
+                    Formulario para añadir nuevos componentes al inventario
                 </p>
             </section>
         </section>
@@ -38,49 +38,71 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main class="inventory-area">
         <section id="formulario" class="narrow" aria-labelledby="form-title">
-            <h2 id="form-title" class="section-title">Formulario</h2>
+            <h2 id="form-title" class="section-title">Nuevo componente</h2>
 
             <form class="formulario" action="../html/gracias.html">
 
-                <!-- Caja de texto -->
+                <!-- Tipo de componente -->
                 <div class="campo">
-                    <label for="test">Escribe tu texto:</label>
-                    <input type="text" id="test" name="test">
+                    <label for="componente">Tipo de componente:</label>
+                    <select id="componente" name="componente">
+                        <option value="">Selecciona un componente</option>
+                        <option value="cpu">CPU</option>
+                        <option value="ram">RAM</option>
+                        <option value="placa-base">Placa base</option>
+                        <option value="gpu">GPU</option>
+                        <option value="fuente">Fuente de alimentación</option>
+                        <option value="disco">Disco duro</option>
+                        <option value="refrigeracionaire">Refrigeracion CPU por aire</option>
+                        <option value="refrigeracionliquida">Refrigeracion CPU por liquido</option>
+                        <option value="ventilador">Ventilador</option>
+                        <option value="cable">Cable de alimentación</option>
+                        <option value="bateria">Batería BIOS</option>
+                        <option value="otro">Otro</option>
+                    </select>
                 </div>
 
-                <!-- Checkbox -->
-                <fieldset>
-                    <legend>Elige una o varias:</legend>
-                    <div class="opcion"><input type="checkbox" id="test1" name="test1"><label for="test1">Test1</label></div>
-                    <div class="opcion"><input type="checkbox" id="test2" name="test2"><label for="test2">Test2</label></div>
-                    <div class="opcion"><input type="checkbox" id="test3" name="test3"><label for="test3">Test3</label></div>
-                </fieldset>
-
-                <!-- Radio -->
-                <fieldset>
-                    <legend>Elige solo una:</legend>
-                    <div class="opcion"><input type="radio" id="radio1" name="test4" value="Test1"><label for="radio1">Test1</label></div>
-                    <div class="opcion"><input type="radio" id="radio2" name="test4" value="Test2"><label for="radio2">Test2</label></div>
-                    <div class="opcion"><input type="radio" id="radio3" name="test4" value="Test3"><label for="radio3">Test3</label></div>
-                </fieldset>
-
-                <!-- Text Area -->
+                <!-- Nombre del componente -->
                 <div class="campo">
-                    <label for="message">Escribe lo que quieras cambiando el tamaño del recuadro</label>
-                    <textarea id="message" name="message" rows="10">Escribe aqui tu texto.</textarea>
+                    <label for="nombre">Nombre del componente:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej.: Memoria RAM">
+                </div>
+
+                <!-- Referencia -->
+                <div class="campo">
+                    <label for="referencia">Referencia o modelo:</label>
+                    <input type="text" id="referencia" name="referencia" placeholder="Ej.: GIGABYTE A520M K V2">
+                </div>
+
+                <!-- Características -->
+                <div class="campo">
+                    <label for="caracteristicas">Características:</label>
+                    <textarea id="caracteristicas" name="caracteristicas" rows="6" placeholder="Escribe las características del componente"></textarea>
+                </div>
+
+                <!-- Imagen -->
+                <div class="campo">
+                    <label for="imagen">Nombre o ruta de la imagen:</label>
+                    <input type="text" id="imagen" name="imagen" placeholder="Ej.: placa-base.jpg">
+                </div>
+
+                <!-- Enlace -->
+                <div class="campo">
+                    <label for="enlace">Enlace del producto (opcional):</label>
+                    <input type="url" id="enlace" name="enlace" placeholder="https://www.ejemplo.com">
                 </div>
 
                 <!-- Botón de enviar -->
                 <div class="campo">
-                    <p class="ayuda">Haz click para enviar:</p>
-                    <input class="boton" type="submit" value="Enviar">
+                    <p class="ayuda">Cuando termines, pulsa para enviar:</p>
+                    <input class="boton" type="submit" value="Añadir componente">
                 </div>
 
             </form>
         </section>
     </main>
 
-    <!-- PIE DE PÁGINA -->
+        <!-- PIE DE PÁGINA -->
     <footer class="site-footer" id="informacion">
         <section class="footer-content">
             <img class="footer-logo" src="../img/CD.png" alt="Logo del Campus Digital">
