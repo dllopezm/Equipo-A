@@ -43,7 +43,7 @@
             <form class="formulario" action="../html/gracias.html">
 
                 <!-- Tipo de componente -->
-                <div class="campo">
+                <p class="campo">
                     <label for="componente">Tipo de componente:</label>
                     <select id="componente" name="componente">
                         <option value="">Selecciona un componente</option>
@@ -60,49 +60,49 @@
                         <option value="bateria">Batería BIOS</option>
                         <option value="otro">Otro</option>
                     </select>
-                </div>
+                </p>
 
                 <!-- Nombre del componente -->
-                <div class="campo">
+                <p class="campo">
                     <label for="nombre">Nombre del componente:</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Ej.: Memoria RAM">
-                </div>
+                </p>
 
                 <!-- Referencia -->
-                <div class="campo">
+                <p class="campo">
                     <label for="referencia">Referencia o modelo:</label>
                     <input type="text" id="referencia" name="referencia" placeholder="Ej.: GIGABYTE A520M K V2">
-                </div>
+                </p>
 
                 <!-- Características -->
-                <div class="campo">
+                <p class="campo">
                     <label for="caracteristicas">Características:</label>
                     <textarea id="caracteristicas" name="caracteristicas" rows="6" placeholder="Escribe las características del componente"></textarea>
-                </div>
+                </p>
 
                 <!-- Imagen -->
-                <div class="campo">
+                <p class="campo">
                     <label for="imagen">Nombre o ruta de la imagen:</label>
                     <input type="text" id="imagen" name="imagen" placeholder="Ej.: placa-base.jpg">
-                </div>
+                </p>
 
                 <!-- Enlace -->
-                <div class="campo">
+                <p class="campo">
                     <label for="enlace">Enlace del producto (opcional):</label>
                     <input type="url" id="enlace" name="enlace" placeholder="https://www.ejemplo.com">
-                </div>
+                </p>
 
                 <!-- Botón de enviar -->
-                <div class="campo">
+                <section class="campo" aria-label="Envío del formulario">
                     <p class="ayuda">Cuando termines, pulsa para enviar:</p>
                     <input class="boton" type="submit" value="Añadir componente">
-                </div>
+                </section>
 
             </form>
         </section>
     </main>
 
-        <!-- PIE DE PÁGINA -->
+    <!-- PIE DE PÁGINA -->
     <footer class="site-footer" id="informacion">
         <section class="footer-content">
             <img class="footer-logo" src="../img/CD.png" alt="Logo del Campus Digital">
