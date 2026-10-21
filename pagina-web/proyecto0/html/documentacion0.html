@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Documentación del Proyecto 0 del Equipo-A (obsoleta)">
-    <title>(OBSOLETA) Documentación del Proyecto 0 | Equipo-A</title>
+    <meta name="description" content="Documentación final del proyecto de gestión de inventario de hardware del Equipo-A (1º ASIR)">
+    <title>Documentación del Proyecto | Equipo-A</title>
     <link rel="stylesheet" href="../css/proyecto.css">
 </head>
 
-<body class="pagina-documentacion">
+<body class="pagina-documentacion documentacion-final">
 
     <!-- CABECERA PRINCIPAL -->
     <header class="site-header" id="inicio">
@@ -18,9 +18,9 @@
 
             <section class="header-text">
                 <p class="header-equipo">EQUIPO-A</p>
-                <h1>DOCUMENTACIÓN DEL PROYECTO 0 (OBSOLETA)</h1>
+                <h1>Proyecto de gestión de inventario de hardware</h1>
                 <p class="header-subtitle">
-                    Memoria de trabajo y propuesta de transformación digital
+                    1º de Administración de Sistemas Informáticos en Red
                 </p>
             </section>
         </section>
@@ -29,98 +29,438 @@
     <!-- NAVEGACIÓN QUE PERMANECE VISIBLE AL DESPLAZARSE -->
     <nav class="site-nav" aria-label="Navegación principal">
         <a href="#inicio">Inicio</a>
-        <a href="#roles">Roles</a>
-        <a href="#memoria">Memoria</a>
-        <a href="#propuesta">Propuesta</a>
+        <a href="#introduccion">Introducción</a>
+        <a href="#planificacion">Planificación</a>
+        <a href="#desarrollo">Desarrollo</a>
+        <a href="#conclusiones">Conclusiones</a>
+        <a href="#cuestionario">Cuestionario</a>
         <a href="#informacion">Información</a>
-        <a href="../index0.html">Ir atrás</a>
+        <a href="../index.html">Ir atrás</a>
     </nav>
 
     <!-- CONTENIDO PRINCIPAL -->
     <main class="inventory-area">
-        <section id="roles" class="prose" aria-labelledby="roles-title">
-            <h2 id="roles-title">Roles iniciales</h2>
-            <p>(no son muy estrictos porque somos un equipo reducido y con poca experiencia, por lo que nos ayudamos los unos a los otros)</p>
-            <ul>
-                <li>LORENZO: DOCUMENTACIÓN</li>
-                <li>ÁNGEL: SECRETARIO</li>
-                <li>LANZAROTE: COORDINADOR</li>
-                <li>ALEX: GERENTE</li>
-            </ul>
-            <p>Distribución de las tareas:</p>
-            <ol type="1">
-                <li>Comprobar funcionamiento (Ángel)</li>
-                <li>Desmontar y documentar cada componente (Lanzarote y Lorenzo) (primer y segundo día)</li>
-                <li>Crear una tabla con la información de los componentes (Lorenzo) (segundo día)</li>
-                <li>Montar el ordenador de nuevo (Ángel y Lanzarote)</li>
-                <li>Instalar nuevo sistema operativo (Lorenzo) (tercer día)</li>
-                <li>Plantear ideas sobre la gestión del almacenaje del inventario (Colectivo)</li>
-            </ol>
+
+        <section id="datos" class="prose" aria-labelledby="datos-title">
+            <h2 id="datos-title">Datos del proyecto</h2>
+            <dl class="ficha">
+                <dt>Autores</dt>
+                <dd>
+                    <ul class="team-list">
+                        <li>Lorenzo Falo Nuez</li>
+                        <li>Ángel Alba Enatarriaga</li>
+                        <li>David Lanzarote López</li>
+                        <li>Robert Alexandru Maican</li>
+                    </ul>
+                </dd>
+                <dt>Tutor</dt>
+                <dd>Abraham</dd>
+                <dt>Fecha de entrega</dt>
+                <dd>Indefinida</dd>
+                <dt>Curso</dt>
+                <dd>1º de Administración de Sistemas Informáticos en Red</dd>
+            </dl>
         </section>
 
-        <section id="memoria" class="prose" aria-labelledby="memoria-title">
-            <h2 id="memoria-title">Memoria de trabajo</h2>
-            <p>Al inicio de este proyecto hemos comenzado creando una base de datos de LibreOffice porque Lorenzo recibió clases sobre su funcionamiento en primero de bachillerato. No la utilizaríamos todavía porque antes queríamos ver si la torre de ordenador que nos habían dado funcionaba correctamente en un monitor. El ordenador ha funcionado inicialmente pero creemos que ya había sido utilizado porque nos pedía un login y una contraseña. El sistema operativo era Ubuntu, y hemos decidido que íbamos a reinstalar Ubuntu. El desmontaje del ordenador se complicó por la ausencia de destornilladores.</p>
-            <p>Antes de reinstalar Ubuntu hemos decidido clasificar los compontentes por su número de serie en la base de datos</p>
-            <figure class="doc-figure">
-                <img src="../img/Fuente alimentacion.jpeg" alt="Fuente de alimentación" class="imagen-fuente">
-                <figcaption>Fuente de Alimentación</figcaption>
-            </figure>
-            <p>Ya en casa, nuestro compañero Lorenzo utilizó un USB para grabar en él una distribución linux <a href="https://nl.releases.ubuntu.com/releases/24.04.3/">(Ubuntu 24.04.3)</a>, que era lo que tenía el ordenador como sistema operativo previamente. Además, verificó la imagen ISO por razones de seguridad.</p>
-            <p>El segundo día hemos desmontado la torre del ordenador para terminar la documentación de los componentes. Al desconectar de manera desorganizada el front panel de la placa base y no recordar cómo se volvía a montar, tuvimos algunas complicaciones en el trabajo que nos hicieron tardar más en montarlo de nuevo. Ya montado todo el ordenador, lo hemos conectado a un monitor y ha funcionado. Hemos reiniciado el ordenador para entrar en la BIOS y, con un USB conectado con la imagen ISO de Ubuntu hemos podido instalar el nuevo sistema operativo en el ordenador. También instalamos <a href="https://www.ventoy.net/en/download.html">Ventoy</a> en un pendrive por petición del profesor</p>
-            <figure class="doc-figure">
-                <img src="../img/bios 2.jpeg" alt="BIOS" class="imagen-fuente">
-                <figcaption>Imagen de la BIOS</figcaption>
-            </figure>
-            <p>El tercer día clonamos el repositorio de <a href="https://github.com/labartolomeh/ASIR-1-Retos.git">Abraham</a> en un submódulo de nuestro repositorio de github. Nos costó bastante, aunque en realidad era sencillo, pero no estábamos bien familiarizados con la relación entre la máquina local y la web. También estuvimos un buen rato practicando con HTML de manera individual para poder hacer en un futuro una web que gestione la información del inventario. También creamos un apartado para gestionar la página web de la información del inventario en nuestro repositorio de github.</p>
-            <p>Lanzarote estuvo buscando más información sobre cada componente recogido en una tabla excel que creamos para que esta fuese completada. Al final de la clase, nos enseñaron más hardware para documentar.</p>
-            <p>El cuarto día Lanzarote empezó a recopilar la información del hardware que encontramos el día anterior y empezó a explorar maneras para compatibilizar una información con otra y contrastarla. Además, comenzó a crear la base de datos en SQLite, basada en la tabla excel que teníamos. Por otro lado, Ángel <a href="https://www.w3schools.com/html/default.asp">empezó a pasar la información que teníamos en el excel a una página web HTML.</a> Además, <a href="https://www.drawdb.app/">se puso a trabajar con drawdb</a> porque teníamos que gestionar mejor internamente la base de datos, visualizar las relaciones entre tablas, etc. Lorenzo buscó <a href="https://github.com/marketplace/actions/deploy-to-neocities">maneras de crear una página web en neocities que pueda desarrollarse de modo colaborativo utilizando Github Actions.</a> Luego Lorenzo aportó un poco al índice del HTML y empezó a migrar la presente documentación a un html. Poco a poco, se empezó a centralizar toda la información en el repositorio de github</p>
-            <p>El fin de semana, Ángel terminó de hacer la tabla con la información del inventario.</p>
-            <p>El quinto dia hemos hecho trabajo extra en la web, Alex estuvo limpiando el codigo HTML y implementando una IU con CSS, hemos estado reorganizando la base de datos en drawdb y sqlite, por el otro lado, lanzarote esta construyendo la base de datos a partir de los datos de los componentes en SQlite, categorizando el inventario con los componentes clave y sus especificaciones, Angel estuvo poniendo las mismas caracteristicas en drawdb y nos hemos encontrado con un problema intentando exportar de drawdb a SQlite, hemos intentado varias vias, incluyendo consultar a un agente IA, a partir de la lista de los componentes que hemos recompilado, hemos consultado la informacion de los fabricantes en internet y puesto la informacion de las caracteristicas en la base de datos.</p>
-            <p>El miércoles Alex hizo la página de la información del inventario y estuvimos implementándola en github/neocities. También revisamos si el sistema operativo que teníamos en la torre (Ubuntu) funcionaba correctamente, y sacamos algunas fotos.</p>
-            <figure class="doc-figure doc-figure--grande">
-                <img src="../img/hipo.jpg" alt="Documental de hipopótamos siendo reproducido en Ubuntu" class="imagen-fuente">
-                <figcaption>Documental de hipopótamos siendo reproducido en Ubuntu.</figcaption>
-            </figure>
-            <p>El jueves Lorenzo estuvo retocando la página web implementando algunas herramientas de CSS, hipervínculos regresivos, etc. Ángel y Lanzarote realizaron el "mockup" de la página web que nos pidió Marta y Alex añadió detalles a la página web del inventario (efecto WOW, más hipervínculos, etc.)</p>
-            <p>Ángel y Lanzarote también estuvieron mejorando la base de datos y añadiendo las informaciones que le faltaban.</p>
-            <p>El viernes estuvimos escuchando las bases del problema de la clase de bases de datos.</p>
-            <p>El lunes Ángel y Alex se pusieron a realizar el mockup de la web por petición de Marta, utilizando Balsamiq. Lorenzo y Alex siguieron con la documentación y mejorando la web.</p>
+        <section id="indice" class="prose" aria-labelledby="indice-title">
+            <h2 id="indice-title">Índice</h2>
+            <nav class="indice" aria-label="Índice del documento">
+                <ul>
+                    <li><a href="#introduccion">Introducción</a></li>
+                    <li><a href="#herramientas">Herramientas del proyecto</a></li>
+                    <li><a href="#objetivos">Objetivos del proyecto</a></li>
+                    <li><a href="#requisitos">Requisitos del proyecto</a></li>
+                    <li><a href="#planificacion">Planificación</a></li>
+                    <li>
+                        <a href="#desarrollo">Desarrollo del proyecto</a>
+                        <ul>
+                            <li><a href="#tecnologias">Tecnologías/Herramientas empleadas</a></li>
+                            <li><a href="#documentacion-tecnica">Documentación técnica</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#conclusiones">Conclusiones</a>
+                        <ul>
+                            <li><a href="#resultados">Resultados obtenidos y posibles mejoras futuras</a>
+                                <ul>
+                                    <li><a href="#inventario">Inventario del Almacén de Hardware</a></li>
+                                    <li><a href="#base-datos">Desarrollo e Implementación de la Base de Datos</a></li>
+                                    <li><a href="#web">Diseño en el ámbito Web</a></li>
+                                    <li><a href="#soporte">Soporte Técnico y Configuración de Sistemas</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#ce2a">CE2A Clasificación y Versiones</a></li>
+                    <li><a href="#ce2b">CE2B Árbol DOM</a></li>
+                    <li><a href="#ce2d">CE2D Comparativa HTML vs. XHTML</a></li>
+                    <li><a href="#ce2e">CE2E XHTML en Gestión de Datos</a></li>
+                    <li>
+                        <a href="#ce2g">CE2G Ventajas de usar .CSS</a>
+                        <ul>
+                            <li><a href="#css-rendimiento">Optimización del Rendimiento, Eficiencia y Carga de Archivos</a></li>
+                            <li><a href="#css-mantenimiento">Mantenimiento Centralizado y Arquitectura de Código</a></li>
+                            <li><a href="#css-semantica">Estructura Semántica, Accesibilidad y SEO</a></li>
+                            <li><a href="#css-flexibilidad">Flexibilidad, Adaptabilidad y Diseño Responsivo</a></li>
+                            <li><a href="#css-estandares">Cumplimiento de Estándares Oficiales</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#cuestionario">Cuestionario de Preguntas Teórico-Prácticas Marta</a>
+                        <ul>
+                            <li><a href="#q-evolucion">Sobre la evolución web (CE2A)</a></li>
+                            <li><a href="#q-codigo">Sobre el análisis del código (CE2B, CE2C)</a></li>
+                            <li><a href="#q-sintaxis">Sobre la rigurosidad sintáctica (CE2D, CE2E)</a></li>
+                            <li><a href="#q-diseno">Sobre el diseño y presentación (CE2G, CE2H)</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         </section>
 
-        <section id="propuesta" class="prose" aria-labelledby="propuesta-title">
-            <h2 id="propuesta-title">Propuesta de transformación digital</h2>
+        <section id="introduccion" class="prose" aria-labelledby="introduccion-title">
+            <h2 id="introduccion-title">Introducción</h2>
+            <p>Tenemos que crear una forma de gestionar un almacén de hardware que nuestros profesores nos van a dar.</p>
+        </section>
 
-            <h3>Pilar 1: Identificación Única mediante Etiquetado QR Inteligente</h3>
-            <ul>
-                <li><strong>El problema real del reto:</strong> Es difícil saber visualmente qué características tiene una placa base, una memoria RAM o un equipo montado sin encenderlo o desmontarlo.</li>
-                <li><strong>La solución digital:</strong> Implementar un sistema de <strong>etiquetado con códigos QR vinculados dinámicamente a vuestra Base de Datos.</strong></li>
+        <section id="herramientas" class="prose" aria-labelledby="herramientas-title">
+            <h2 id="herramientas-title">Herramientas del proyecto</h2>
+            <p>Para realizar este proyecto hemos utilizado las herramientas de Git/Github, Neocities, SQLite, Balsamiq, Magnific y Visual Code Studio.</p>
+        </section>
+
+        <section id="objetivos" class="prose" aria-labelledby="objetivos-title">
+            <h2 id="objetivos-title">Objetivos del proyecto</h2>
+            <p>Crear un inventario para gestionar un almacén, incluyendo una base de datos, una página web y documentación.</p>
+        </section>
+
+        <section id="requisitos" class="prose" aria-labelledby="requisitos-title">
+            <h2 id="requisitos-title">Requisitos del proyecto</h2>
+            <p>Un equipo funcional, un inventario digital, documentación técnica, justificación de las compatibilidades, un sistema operativo instalado y configurado, una base de datos, una propuesta de transformación digital y una memoria del proyecto.</p>
+        </section>
+
+        <section id="planificacion" class="prose" aria-labelledby="planificacion-title">
+            <h2 id="planificacion-title">Planificación</h2>
+            <p>A lo largo del proyecto, al grupo se nos ha asignado diferentes retos, cuestiones o problemas.</p>
+            <ul class="timeline">
                 <li>
-                    <strong>Cómo mejora la gestión:</strong> Cualquier técnico o profesor, escaneando el código QR con su móvil, puede ver al instante:
+                    <strong>Día 1:</strong> Instalar Ubuntu (Lorenzo).
                     <ul>
-                        <li>El procesador, RAM y almacenamiento exacto del equipo.</li>
-                        <li>El historial de intervenciones (qué reparó vuestro grupo).</li>
-                        <li>Su estado actual (Funcional / En reparación / Para piezas).</li>
+                        <li><strong>Problemas:</strong> El sistema operativo (Ubuntu) pide usuario y contraseña.</li>
+                        <li><strong>Solución:</strong> Reinstalar el sistema operativo de 0.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Día 2:</strong> Desmontar el equipo y realizar inventario de los componentes, instalar Ventoy en el USB (realizado en colaboración del grupo).
+                    <ul>
+                        <li><strong>Problemas:</strong> Las conexiones del panel frontal no se conectaron de manera correcta.</li>
+                        <li><strong>Solución:</strong> Alex ha revisado las conexiones del panel frontal y las ha reordenado de manera correcta, permitiendo que el ordenador se encienda perfectamente.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Día 3:</strong> Clonar repositorio del proyecto en Github, prácticas individuales de HTML.
+                    <ul>
+                        <li><strong>Problemas:</strong> No estábamos familiarizados con Github.</li>
+                        <li><strong>Solución:</strong> Prueba y error; finalmente Lorenzo tuvo que usar el CMD para clonar el repositorio, submodular y subirlo a Github a través de git.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Día 4:</strong> Limpieza de código HTML, añadir nuevas funciones al HTML del inventario e implementación de CSS para la IU (Alex), reorganización de base de datos (Ángel y Lanzarote).
+                    <ul>
+                        <li><strong>Problemas:</strong> No hemos podido pasar de drawdb a SQLite y no hubo una solución clara.</li>
+                        <li><strong>Solución:</strong> Acabamos haciendo todo manualmente desde 0.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Día 6:</strong> Implementar página del inventario en Github/Neocities (Alex y Lorenzo), revisar si el sistema funciona perfectamente.
+                    <ul>
+                        <li><strong>Problemas:</strong> Ninguno.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Día 7:</strong> Implementación de hipervínculos regresivos y otras funciones CSS en Neocities (Lorenzo), realización del mockup de la web (Ángel y Lanzarote), implementación de efecto “wow” en la web (animación de intro, vínculos en la página web, etc.).
+                    <ul>
+                        <li><strong>Problemas:</strong> Ninguno.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Día 8:</strong> Continuación del trabajo previo sin terminar (en grupo).
+                    <ul>
+                        <li><strong>Problemas:</strong> Ninguno.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Día 9:</strong> Continuación del mockup en Balsamiq (Ángel y Lanzarote), continuación del documento (Alex y Lorenzo).
+                    <ul>
+                        <li><strong>Problemas:</strong> Terminamos la documentación expuesta en un formato diario y no como la plantilla de informe planteada, por lo que el día 10 se procede al cambio.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Día 10:</strong> Realización del documento correcto a petición de Marta (Lorenzo y Alex).
+                    <ul>
+                        <li><strong>Problemas:</strong> Ninguno.</li>
                     </ul>
                 </li>
             </ul>
-
-            <h3>Pilar 2: Automatización de la Auditoría de Hardware (Inventario Asistido)</h3>
-            <ul>
-                <li><strong>El problema real del reto:</strong> Consultar los componentes uno a uno en la BIOS o usar comandos de consola consume mucho tiempo y puede provocar errores humanos al transcribir los datos.</li>
-                <li><strong>La solución digital:</strong> Utilizar herramientas de <strong>auditoría automatizada por software</strong> de código abierto (como OCS Inventory o GLPI Agent) ejecutadas desde un USB de diagnóstico en el equipo recuperado.</li>
-                <li><strong>Cómo mejora la gestión:</strong> El software detecta automáticamente el modelo exacto de los componentes, los módulos de RAM, el estado de salud del disco (S.M.A.R.T.) y <strong>vuelca la información directamente en vuestra base de datos vía API,</strong> eliminando el registro manual.</li>
-            </ul>
-
-            <h3>Pilar 3: Algoritmo de Compatibilidad y Reutilización de Componentes</h3>
-            <ul>
-                <li><strong>El problema real del reto:</strong> Cuesta saber qué componentes de distintas generaciones pueden utilizarse conjuntamente (p. ej., si una RAM DDR3 sirve para una placa concreta).</li>
-                <li><strong>La solución digital:</strong> Explotar la base de datos que habéis diseñado integrando <strong>vistas lógicas o consultas de compatibilidad de zócalos (sockets) y ranuras.</strong></li>
-                <li><strong>Cómo mejora la gestión:</strong> El sistema permite lanzar una consulta digital rápida (ej. "¿Qué módulos de memoria libres tengo compatibles con la Placa Base X?") para saber inmediatamente qué piezas se pueden combinar para recuperar un segundo o tercer ordenador sin probar ensayo y error físicamente.</li>
-            </ul>
-
-            <p class="prose-volver"><a href="#inicio">Volver arriba</a> / <a href="../index0.html">Ir atrás</a></p>
         </section>
+
+        <section id="desarrollo" class="prose" aria-labelledby="desarrollo-title">
+            <h2 id="desarrollo-title">Desarrollo del proyecto</h2>
+
+            <section id="tecnologias" aria-labelledby="tecnologias-title">
+                <h3 id="tecnologias-title">Tecnologías/Herramientas empleadas</h3>
+                <p>Las tecnologías utilizadas han sido las siguientes:</p>
+                <ul>
+                    <li><a href="https://www.magnific.com">Magnific</a></li>
+                    <li><a href="https://balsamiq.com/">Balsamiq</a></li>
+                    <li><a href="https://github.com/dllopezm/Equipo-A">GitHub</a> (enlace al GitHub en el que está toda la información)</li>
+                    <li><a href="https://www.drawdb.app/">Drawdb</a></li>
+                    <li>SQLite (la carpeta de instalación se encuentra en el Google Drive)</li>
+                    <li><a href="https://neocities.org/">Neocities</a></li>
+                </ul>
+            </section>
+
+            <section id="documentacion-tecnica" aria-labelledby="documentacion-tecnica-title">
+                <h3 id="documentacion-tecnica-title">Documentación técnica</h3>
+                <p>La documentación técnica utilizada en la búsqueda de información fue la información que aparecía en la página oficial de PcComponentes, Amazon España, The Retro Web, algunos manuales de instalación, PROComponentes, technical.city, <a href="http://dragonsteelmods.com">dragonsteelmods.com</a> y <a href="http://www.frostytech.com">www.frostytech.com</a>.</p>
+                <p>A continuación se pueden ver los enlaces a los distintos componentes en los que hemos sacado la información:</p>
+                <ul class="lista-enlaces">
+                <li><a href="https://www.pccomponentes.com/disco-duro-intenso-top-performance-ssd-m-2-2280-256gb-sata3">Intenso Top Performance SSD M.2 2280 256GB SATA3</a></li>
+                <li><a href="https://www.pccomponentes.com/disco-duro-wd-caviar-blue-500gb-hdd-7200rpm-sata-iii-35">Disco Duro WD Caviar Blue 500GB HDD 7200rpm SATA III 3.5&quot;</a></li>
+                <li><a href="https://www.amazon.es/Samsung-SpinPoint-F3-HD502HJ-pulgadas/dp/B002J65AHQ">Samsung SpinPoint F3, modelo HD502HJ de 500GB</a></li>
+                <li><a href="https://www.pccomponentes.com/sandisk-ssd-plus-240gb-sata-iii?srsltid=AU7gw4UTyHElaqtbZDaypolUpVPuSXBelnIvPFVegwffxCiNaAUAkRp7">Disco Duro SanDisk SSD Plus 240GB SATA III</a></li>
+                <li><a href="https://www.pccomponentes.com/amd-athlon-3000g-35ghz?srsltid=AU7gw4UmAsnqL7ormKb9FLeeQ-S55l6PaTQCbrFixCQz4lJFW-SDp4I7">Athlon 3000G with Radeon Vega Graphics</a></li>
+                <li>INTEL core 2 (no se puede distinguir el modelo específico)</li>
+                <li><a href="https://www.amazon.es/AMD-Athlon-250-3GHz-Caja/dp/B002BIQC6K">AMD Athlon II X2 250</a></li>
+                <li><a href="https://www.pccomponentes.com/tacens-anima-apiii500-fuente-alimentacion-pc-atx-500w-85-bronze-ventilador-12cm-negro">TACENS ANIMA APSI500 ATX 500W</a></li>
+                <li><a href="https://www.pccomponentes.com/thermaltake-tr2-s-700w-80-plus">Thermaltake TR2 S 700W ATX</a></li>
+                <li><a href="https://www.pccomponentes.com/silverstone-sst-st45sf-g-v20-450w-80plus-gold?srsltid=AU7gw4VyU8oC-Nai0kLMLvEA5vnUt6CptzCqPsExhy2DmbFil6Kg4eQZ">Maxima Oke 450W ST-452</a></li>
+                <li><a href="https://www.pccomponentes.com/powercase-pca-ep500-500w?srsltid=AU7gw4XB2HoOdJxqWtYmQDG8dKsopRdIOYP-ULWl5Tb-7iQRA4hYbR28">fuente de alimentación PC CASE 500W</a></li>
+                <li><a href="https://www.pccomponentes.com/tarjeta-grafica-asus-geforce-gt-710-sl-evo-brk-2gb-gddr5?s_kwcid=AL!14405!3!!!!x!!&amp;gad_source=1&amp;gad_campaignid=22157318807&amp;gclid=CjwKCAjwifjVBhBKEiwAYx4K9MZvw0kXj_Na4_72r7JuaEFTELHuXa9CV6pebDfY7akvWTCtWIJ42xoCZocQAvD_BwE">ASUS EN9600GT</a></li>
+                <li><a href="https://technical.city/es/gpu/Radeon-HD-3650">sapphire ati radeon hd 3650</a></li>
+                <li><a href="https://theretroweb.com/expansioncards/s/asus-eah3450-htp-512m-a">asus the retro web eah3450/htp/512m/a</a></li>
+                <li><a href="https://www.pccomponentes.com/gigabyte-a520m-k-v2">Placa Base Gigabyte A520M K V2</a></li>
+                <li><a href="https://www.amazon.es/M2N68-AM-compatible-RAID10-channel-Express/dp/B0020KJU90">ASUS M2N68-AM PLUS</a></li>
+                <li><a href="https://theretroweb.com/motherboards/s/asus-p5ld2-se">ASUS P5LD2 SE</a></li>
+                <li><a href="https://www.pccomponentes.com/tp-link-tl-wn881nd-300mbs-11n-wireless-pci-express-ver-2-0?s_kwcid=AL!14405!3!711574123639!!!g!317309914550!&amp;gad_source=1&amp;gad_campaignid=21649614460&amp;gclid=CjwKCAjwifjVBhBKEiwAYx4K9EQV4r_bHmfr8g9eoASxwwW81DUZmkaMTJHUNPLubP1DEWwhEqNcKhoCI9YQAvD_BwE">Tarjeta de red inalámbrica interna (WiFi)</a></li>
+                <li><a href="http://download.conceptronic.net/manuals/C05-133_C480i5_v3.0_Quick_Guide_ML.pdf">Conceptronic C480i</a></li>
+                <li><a href="http://download.conceptronic.net/manuals/C04-027_C54C_User_Manual_ENG.pdf">Tarjeta de red inalámbrica interna</a></li>
+                <li><a href="https://www.procomponentes.com/es/tarjetas-varias/conceptronic-pci-firewire-3-ieee-1394-400-mbps-ci1394b-3979.html">Tarjeta controladora interna de puertos de alta velocidad FireWire 400 (IEEE 1394a / i.LINK)</a></li>
+                <li><a href="https://www.pccomponentes.com/ventilador-cpu-refrigeracion-aire-amd-socket-am4-92mm-wraith-stealth-negro-4-pin?srsltid=AU7gw4UZGikNmsy_tRvvLpve92GaGQ1uL1WvuS-2pyUj9zmvEknUB5hE">Refrigeración por aire para CPU AMD Wraith Stealth</a></li>
+                <li><a href="https://www.pccomponentes.com/adata-xpg-gammix-d35-ddr4-3200mhz-8gb-1x8gb-cl16">Adata XPG GAMMIX D35 DDR4</a></li>
+                <li><a href="https://www.amazon.es/MEMORIA-KINGSTON-DDR2-2GB-800Mhz/dp/B003N64O6E/ref=sr_1_1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;crid=2WX4CNPH9UA2W&amp;dib=eyJ2IjoiMSJ9.J7ouSoPieNoZn-tHz-evr2AOwyjROjJVegW0Xyqo0AbMJ8JndXvgT0B1yBb-0dOWP_w-wm9ceNXTwI_2eTa6TJdigFddvtxRIccuyWqBNL_6RpRejxc_N3kaqB6P6OYfDPIYKRwBAuNiiIlt4hfmsVrjql42uO1jl2U3wf4xOlvAi6gzmPMQnbO4EDDhQi_ifJ3lkJ_4ahgs_5t7vNiSG3MzJq8iORbtWnj8Bb2wDhnMGJHSKndSqddG-IZ1bMATrFqOCO8IMyPPZUMrWLpTbine8qDFR8GM_A9ZDva19Wc.-PEDveWaKdvjHjwlZITlexvkvpQlUXgVk3AMVq-5b68&amp;dib_tag=se&amp;keywords=Ram+Kingston+DDR2+2+gb+800+Mhz&amp;qid=1790850955&amp;sprefix=ram+kingston+ddr2+2+gb+800+mhz%2Caps%2C321&amp;sr=8-1">Ram Kingston DDR2 2 gb 800 Mhz</a></li>
+                <li><a href="https://www.amazon.es/PC4-17000-compatible-sistemas-especificaciones-M378A1G43DB0-CPB/dp/B0GL3KRRK3/ref=sr_1_16?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;crid=322WH5NK1E9WE&amp;dib=eyJ2IjoiMSJ9.1nl1cpqS4OPoNupFWFzBaXnhbfVQ0HrMlzq-hNPq-i9SLzIfFDrFIonaFGFiDsnR0gS2xX_PJ-UVU549JHxOxYDCTb1c9ILR9FC7iAIjzBP4I0IxhBzlP7XtBwHfOFcX6V0N-pWrLEZs03RHAZCRM6dBjlPA7MvfUofqf-1DozloAOoNLsEW83Q6wjMDUYyKwlPc2iVKQfxlvnIs3wSMUhEuj4LDG7Nv_LJjA5XT-hdcJMWlu7nS6RggsjQMufT458YziokTTDbh7H5mgfbc3K-Oe-bECMxMsmP2vqpQ94M.XwcYQB3RVN5nU1oA5115bLWDe110jhikdIwS95PeYlE&amp;dib_tag=se&amp;keywords=Ram+Samsung+ddr4+4gb+2133+Mhz&amp;qid=1790850526&amp;sprefix=ram+samsung+ddr4+4gb+2133+mhz%2Caps%2C87&amp;sr=8-16">Ram Samsung DDR4 4gb 2133 Mhz</a></li>
+                <li><a href="https://www.amazon.es/Kingston-KVR-677D2S5-1G-Memoria/dp/B000B5U9UK/ref=sr_1_1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;crid=1VZUIJGB5RVEZ&amp;dib=eyJ2IjoiMSJ9.YzSNo4R27x5rlyLu2q3dMa0MQkUjjqXBAg40hpZKm732R7Ii23N_eyvp1UgCZ_dcg97Vjw1LL-Lm3pqsRaqTV0WYNWDIVtz3V-GoKWkgN6mGIPEcqkZJnYDOYxaypbRoaf8zoEWB6N33k103CB93keb37fxDBMI_RBTJb_3bdRKY4rQ5mwtsQ0xtZ3rxOvT-9oLiAo9acC9H1QWVuaHODoM8JMyWUMKqVhlm9MXg9ziWi18Jcb3lmqtxmMXgwOduhJeZWkth7H9E0AeusrMc3MdDlN_6kMRwR5Z44gQknT4.Oj-zNgROoVRA2PKnWDLBbwTlnvuJUzPqrN6vMmwepb0&amp;dib_tag=se&amp;keywords=Ram%2BKingston%2Bddr2%2B1gb%2B667%2BMhz&amp;qid=1790850476&amp;sprefix=ram%2Bkingston%2Bddr2%2B1gb%2B667%2Bmhz%2Caps%2C133&amp;sr=8-1&amp;th=1">Ram Kingston DDR2 1gb 667 Mhz</a></li>
+                <li><a href="https://www.amazon.es/Kingston-Technology-ValueRAM-667MHZ-SODIMM/dp/B000Z70E36">Ram Kingston DDR2 2gb 667 Mhz</a></li>
+                <li><a href="https://www.dragonsteelmods.com/akasa-evo-120-heatpipe-cpu-cooler-3/">Refrigeración por aire para CPU Akasa EVO 120 (AK-920)</a></li>
+                <li><a href="https://store.cwc-group.com/nj12025se.html">Ventilador de chasis independiente (Case Fan) sin escobillas Ning Jie Electronic NJ12025SE</a></li>
+                <li><a href="https://www.frostytech.com/articles/1904/2.html">Refrigeración por aire para CPU Gigabyte G-Power Cooler Pro</a></li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="conclusiones" class="prose" aria-labelledby="conclusiones-title">
+            <h2 id="conclusiones-title">Conclusiones</h2>
+
+            <section id="resultados" aria-labelledby="resultados-title">
+                <h3 id="resultados-title">Resultados obtenidos y posibles mejoras futuras</h3>
+
+                <section id="inventario" aria-labelledby="inventario-title">
+                    <h4 id="inventario-title">Inventario del Almacén de Hardware</h4>
+                    <ul>
+                        <li><strong>Inventariado físico completo:</strong> Se logró desmontar el equipo asignado, identificar cada uno de sus componentes de hardware y registrar toda la información para dar inicio al control del almacén y analizando compatibilidades de los distintos componentes con las placas bases de nuestro almacén.</li>
+                    </ul>
+                </section>
+
+                <section id="base-datos" aria-labelledby="base-datos-title">
+                    <h4 id="base-datos-title">Desarrollo e Implementación de la Base de Datos</h4>
+                    <ul>
+                        <li>Hemos empezado a crear el inventario en una base de datos en SQLite al nivel y conocimiento de reto en la actualidad.</li>
+                    </ul>
+                </section>
+
+                <section id="web" aria-labelledby="web-title">
+                    <h4 id="web-title">Diseño en el ámbito Web</h4>
+                    <ul>
+                        <li>Se elaboró el mockup de la web utilizando <em>Balsamiq</em>, asegurando una planificación visual antes del desarrollo.</li>
+                        <li>Se programó el sitio web utilizando código en HTML y CSS.</li>
+                        <li><strong>Efecto “Wow”:</strong> Se integraron elementos dinámicos atractivos, como una animación de introducción y vínculos interactivos dentro de la página.</li>
+                        <li><strong>Publicación:</strong> La página web del inventario se subió en la plataforma de GitHub para su acceso público.</li>
+                    </ul>
+                </section>
+
+                <section id="soporte" aria-labelledby="soporte-title">
+                    <h4 id="soporte-title">Soporte Técnico y Configuración de Sistemas</h4>
+                    <ul>
+                        <li><strong>Puesta a punto del sistema operativo:</strong> Se soluciona el bloqueo de credenciales inicial mediante la reinstalación limpia desde cero de Ubuntu, dejando el equipo completamente operativo.</li>
+                        <li>Se configuró un almacenamiento USB multiarranque utilizando <em>Ventoy</em>.</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section id="mejoras" aria-labelledby="mejoras-title">
+                <h3 id="mejoras-title">Propuesta de transformación digital</h3>
+                <p>Como posibles mejoras futuras exponemos la siguiente propuesta de transformación digital.</p>
+                <h4>Propuesta 1: Identificación Única mediante Etiquetado QR Inteligente</h4>
+                <ul>
+                    <li>Implementar un sistema de lectura de etiquetas de códigos de barras o códigos QR en el almacén físico, vinculados mediante una API web para realizar altas y bajas automáticas de stock desde dispositivos móviles.</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="ce2a" class="prose" aria-labelledby="ce2a-title">
+            <h2 id="ce2a-title">CE2A Clasificación y Versiones</h2>
+            <p class="pregunta"><em>¿Has identificado y clasificado en la memoria técnica los lenguajes de marcas relacionados con la Web y la evolución de sus distintas versiones (ej. HTML4, XHTML, HTML5)?</em></p>
+            <p>El HTML 1.0 (de 1991 a 1993) fue la primera versión de HTML, que solo tenía funcionalidades básicas. En 1995, HTML 2.0 se estandarizó oficialmente. En 1997, HTML 3.2 incorporó las tablas y mejoró la presentación de los documentos. HTML 4.0 (1997) y 4.01 (1999) fomentaron la separación entre HTML y CSS. XHTML 1.0 se creó en 2000 como una versión más estricta de HTML, basada en XML. Sin embargo, XHTML 2.0 se acabó descontinuando debido a su rigidez, las dificultades de implementación y la falta de compatibilidad con las páginas existentes. HTML5 comenzó a desarrollarse en 2004 y se publicó oficialmente en 2014, incorporando elementos semánticos, soporte para audio y vídeo y nuevas funcionalidades. HTML 5.1 (2016) y HTML 5.2 (2017) introdujeron nuevas mejoras. Desde entonces, HTML se mantiene como un estándar vivo (<em>HTML Living Standard</em>), actualizado continuamente por WHATWG.</p>
+            <figure class="doc-figure">
+                <img src="../img/linea-cronologica-html.png" alt="Infografía con la línea cronológica de HTML: HTML 2.0 (1995), HTML 3.2 (1997), HTML 4.01 (1999), XHTML 1.0 (2000) y HTML5 (2014)">
+                <figcaption>Línea cronológica de HTML (fuente: htmldesdecero.es)</figcaption>
+            </figure>
+        </section>
+
+        <section id="ce2b" class="prose" aria-labelledby="ce2b-title">
+            <h2 id="ce2b-title">CE2B Árbol DOM</h2>
+            <figure class="figura-codigo">
+                <pre><code>document
+└── html
+    ├── head
+    │   ├── meta, title
+    │   └── link (stylesheet)
+    └── body
+        ├── aside (.intro-screen)
+        │   └── section (intro-content)
+        ├── header (.site-header)
+        │   └── section (header-content)
+        │       └── section (header-text)
+        ├── nav (.site-nav)
+        ├── main (.inventory-area)
+        │   ├── section (team-section)
+        │   │   └── ul (team-list)
+        │   └── section (componentes)
+        │       └── table
+        │           ├── thead
+        │           └── tbody
+        │               ├── tr (Procesador)
+        │               ├── tr (Memoria RAM)
+        │               ├── tr (Placa base)
+        │               ├── tr (Fuente de alimentación)
+        │               ├── tr (Disco)
+        │               ├── tr (Ventilador)
+        │               ├── tr (Cable de alimentación)
+        │               └── tr (Batería BIOS)
+        └── footer (.site-footer)
+            └── section (footer-content)
+                └── section (footer-text)</code></pre>
+                <figcaption>Árbol DOM de la página del inventario</figcaption>
+            </figure>
+        </section>
+
+        <section id="ce2d" class="prose" aria-labelledby="ce2d-title">
+            <h2 id="ce2d-title">CE2D Comparativa HTML vs. XHTML</h2>
+            <p class="pregunta"><em>¿Diferencias claramente en la memoria o exposición de las semejanzas y reglas sintácticas que diferencian los lenguajes HTML y XHTML?</em></p>
+            <p>HTML es más permisivo frente a XHTML:</p>
+            <ul>
+                <li>Te permite dejar muchas etiquetas sin cerrar (aunque esta no sea la práctica correcta).</li>
+                <li>Las etiquetas vacías se pueden dejar sin cerrar (en XHTML, siempre hay que cerrarlas).</li>
+                <li>HTML te permite escribir las etiquetas en mayúscula, mientras que XHTML solo permite escribir en minúscula, dando un error si esto no ocurre.</li>
+                <li>Si no hay espacios, en HTML puedes poner atributos sin las comillas, por ejemplo: <code>&lt;input type=text&gt;</code> en vez de <code>&lt;input type="text"&gt;</code>.</li>
+                <li>XHTML, al ser código XML, no permite errores y, al tener fallos, la página web simplemente muestra un error, mientras que HTML, al tener errores, activa un modo de compatibilidad que “adivina” el contenido de la página web.</li>
+            </ul>
+        </section>
+
+        <section id="ce2e" class="prose" aria-labelledby="ce2e-title">
+            <h2 id="ce2e-title">CE2E XHTML en Gestión de Datos</h2>
+            <p class="pregunta"><em>¿Justificas la utilidad de la sintaxis estricta de XHTML cuando se integran páginas web con sistemas de gestión de información, inventarios y bases de datos?</em></p>
+            <p>Aunque XHTML ofrece una sintaxis más estricta que facilita la validación del código y puede favorecer la automatización de ciertos procesos, consideramos que HTML5 es una opción más adecuada para el desarrollo web moderno, sobre todo para nuestro proyecto.</p>
+            <p>HTML5 es más flexible y tolerante a errores sintácticos, lo que facilita el desarrollo, el mantenimiento y la actualización de las páginas web. Además, permite integrar formularios, tablas y elementos interactivos que pueden utilizarse para mostrar y gestionar información procedente de inventarios y bases de datos.</p>
+            <p>Es importante destacar que la conexión con bases de datos y la automatización de procesos dependen principalmente de las tecnologías del servidor, las API y los lenguajes de programación utilizados, y no exclusivamente de la sintaxis del documento HTML. Por tanto, HTML5 también permite desarrollar sistemas automatizados sin necesidad de aplicar las restricciones sintácticas de XHTML.</p>
+        </section>
+
+        <section id="ce2g" class="prose" aria-labelledby="ce2g-title">
+            <h2 id="ce2g-title">CE2G Ventajas de usar .CSS</h2>
+
+            <section id="css-rendimiento" aria-labelledby="css-rendimiento-title">
+                <h3 id="css-rendimiento-title">Optimización del Rendimiento, Eficiencia y Carga de Archivos</h3>
+                <ul>
+                    <li><strong>Reducción del tamaño de los documentos HTML:</strong> Al eliminar los atributos de diseño obsoletos el código HTML se vuelve mucho más limpio y ligero reduciendo drásticamente el peso de los archivos.</li>
+                    <li><strong>Aprovechamiento del almacenamiento en caché:</strong> El archivo CSS externo (vinculado mediante la etiqueta <code>&lt;link&gt;</code>) se descarga una sola vez durante la primera visita. En las siguientes páginas, el navegador utiliza el archivo guardado en caché acelerando notablemente el tiempo de carga del sitio.</li>
+                </ul>
+            </section>
+
+            <section id="css-mantenimiento" aria-labelledby="css-mantenimiento-title">
+                <h3 id="css-mantenimiento-title">Mantenimiento Centralizado y Arquitectura de Código</h3>
+                <ul>
+                    <li><strong>Mantenimiento centralizado y eficiencia en el desarrollo:</strong> Nos permite guardar el estilo y colores corporativos en único archivo .css para que la modificación se replique instantáneamente tantas páginas HTML como queramos, eliminando la necesidad de repetir código de diseño.</li>
+                    <li><strong>Desarrollo en paralelo:</strong> Permite trabajar simultáneamente de forma independiente; el programador puede estructurar los datos en el HTML mientras el diseñador define el aspecto visual en el CSS.</li>
+                </ul>
+            </section>
+
+            <section id="css-semantica" aria-labelledby="css-semantica-title">
+                <h3 id="css-semantica-title">Estructura Semántica, Accesibilidad y SEO</h3>
+                <ul>
+                    <li><strong>Mejora del posicionamiento en buscadores (SEO):</strong> Al estar el HTML libre de código de presentación, los motores de búsqueda (como Google) rastrean e indexan el contenido relevante de forma mucho más rápida y eficiente, mejorando significativamente la densidad de código frente a texto.</li>
+                    <li><strong>Mayor accesibilidad web multidispositivo:</strong> Los lectores de pantalla para personas con discapacidad visual leen el código estructurado secuencialmente. Al separar presentación, se garantiza que estos dispositivos interpreten correctamente el contenido (encabezados, párrafos, listas) facilitando el uso.</li>
+                </ul>
+            </section>
+
+            <section id="css-flexibilidad" aria-labelledby="css-flexibilidad-title">
+                <h3 id="css-flexibilidad-title">Flexibilidad, Adaptabilidad y Diseño Responsivo</h3>
+                <ul>
+                    <li><strong>Independencia del dispositivo y factores de forma:</strong> Permite adaptar la visualización de un mismo contenido a diferentes dispositivos (pantallas de escritorio, smartphones, tabletas o incluso versiones de impresión).</li>
+                    <li><strong>Herramientas de reestructuración dinámica:</strong> Mediante el uso de herramientas como unidades del viewport, <em>container queries</em>, <em>Flexbox</em>… es posible reconfigurar por completo la disposición espacial de la página web sin necesidad de tocar ni una sola línea del código HTML base.</li>
+                </ul>
+            </section>
+
+            <section id="css-estandares" aria-labelledby="css-estandares-title">
+                <h3 id="css-estandares-title">Cumplimiento de Estándares Oficiales</h3>
+                <ul>
+                    <li><strong>Cumplimiento de los estándares oficiales del W3C:</strong> El Consorcio W3C ha declarado formalmente obsoletos los elementos y atributos de marcado destinados únicamente a la presentación. El uso de CSS es el estándar oficial exigido para definir el aspecto visual en la web moderna.</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="cuestionario" class="prose" aria-labelledby="cuestionario-title">
+            <h2 id="cuestionario-title">Cuestionario de Preguntas Teórico-Prácticas Marta</h2>
+
+            <article id="q-evolucion" aria-labelledby="q-evolucion-title">
+                <h3 id="q-evolucion-title">Sobre la evolución web (CE2A)</h3>
+                <p class="pregunta"><em>¿Qué necesidades técnicas impulsaron la transición desde las primeras versiones de HTML hacia XHTML y el posterior desarrollo de HTML5?</em></p>
+                <p>La transición desde las primeras versiones de HTML hacia XHTML y, posteriormente, HTML5 estuvo impulsada por la necesidad de mejorar la estandarización, la compatibilidad entre navegadores y la integración de nuevas tecnologías web.</p>
+                <ul>
+                    <li><strong>HTML:</strong> Permitía crear páginas web, pero los navegadores interpretan el código de forma diferente y toleraban errores, dificultando su mantenimiento.</li>
+                    <li><strong>XHTML:</strong> Introdujo las reglas estrictas de XML, exigiendo un código bien estructurado para facilitar su validación y procesamiento.</li>
+                    <li><strong>HTML5:</strong> Surgió para adaptarse a la web moderna, incorporando etiquetas semánticas, audio, vídeo y gráficos, además de reducir la dependencia de complementos externos como Flash.</li>
+                </ul>
+            </article>
+
+            <article id="q-codigo" aria-labelledby="q-codigo-title">
+                <h3 id="q-codigo-title">Sobre el análisis del código (CE2B, CE2C)</h3>
+                <p class="pregunta"><em>Muestra un fragmento de tu código HTML del inventario e identifica la jerarquía de al menos tres niveles de nodos en el árbol DOM, explicando el propósito de cada etiqueta y atributo utilizado.</em></p>
+                <p>A partir de la línea 67:</p>
+                <ol class="niveles">
+                    <li><code>&lt;table&gt;</code> — <strong>Nivel 1:</strong> Tabla completa del inventario (línea 67).</li>
+                    <li><code>&lt;tbody&gt;</code> — <strong>Nivel 2:</strong> Cuerpo de la tabla (línea 77).</li>
+                    <li><code>&lt;tr&gt;</code> — <strong>Nivel 3:</strong> Fila correspondiente al procesador (línea 79).</li>
+                    <li><code>&lt;td&gt;</code> — <strong>Nivel 4:</strong> Celda con características (línea 82).</li>
+                    <li><code>&lt;ul&gt;</code> — <strong>Nivel 5:</strong> Lista de características (línea 83).</li>
+                    <li><code>&lt;li&gt;</code> — <strong>Nivel 6:</strong> Cada característica individual (línea 84).</li>
+                </ol>
+            </article>
+
+            <article id="q-sintaxis" aria-labelledby="q-sintaxis-title">
+                <h3 id="q-sintaxis-title">Sobre la rigurosidad sintáctica (CE2D, CE2E)</h3>
+                <p class="pregunta"><em>¿Por qué un documento XHTML mal formado puede fallar al conectarse con una base de datos o sistema de inventario, mientras que HTML5 suele ser más permisivo con los errores del desarrollador?</em></p>
+                <p>Un documento XHTML mal formado puede fallar al conectarse con una base de datos o sistema de inventario ya que XHTML es muy poco permisivo al contrario que HTML, que es mucho más permisivo a la hora de programar que XHTML.</p>
+            </article>
+
+            <article id="q-diseno" aria-labelledby="q-diseno-title">
+                <h3 id="q-diseno-title">Sobre el diseño y presentación (CE2G, CE2H)</h3>
+                <p class="pregunta"><em>¿Qué problemas surgirían al mantener la web del almacén si aplicaras los estilos visuales directamente con atributos HTML incrustados en lugar de utilizar un archivo CSS externo?</em></p>
+                <p>Los problemas que surgirían, entre otros, serían que si se quisieran cambiar los colores corporativos de la página habría que buscar entre las cientos de líneas para encontrar dentro del código los colores. Por otro lado, si estuviera en un CSS externo se cambian los colores desde el CSS y ya se cambian automáticamente y más fácil dentro de la página.</p>
+            </article>
+
+            <p class="prose-volver"><a href="#inicio">Volver arriba</a> / <a href="../index.html">Ir atrás</a></p>
+        </section>
+
     </main>
 
     <!-- PIE DE PÁGINA -->
@@ -137,6 +477,7 @@
                     Ángel Alba Enatarriaga
                     y Robert Alexandru Maican.
                 </p>
+                <p>Tutor: <strong>Abraham</strong></p>
                 <p>Curso: <strong>1º ASIR</strong></p>
             </section>
 
