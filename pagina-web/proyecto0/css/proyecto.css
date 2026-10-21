@@ -1056,6 +1056,310 @@ tbody td img:hover {
 }
 
 
+/*Listas de definiciones en páginas de texto (<dl>): etiqueta a la izquierda y valor a la derecha.
+   No depende de ninguna clase, así que también formatea el <dl> sin class="ficha".*/
+
+.prose dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.75rem 1.5rem;
+    align-items: start;
+    margin: 0 0 1rem;
+    padding: 1rem 1.25rem;
+    background: var(--superficie-alt);
+    border: 0.0625rem solid var(--borde);
+    border-radius: 0.75rem;
+}
+
+.prose dt {
+    padding-block: 0.1rem;
+    color: var(--principal-hover);
+    font-size: 0.8rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.prose dd {
+    margin: 0;
+}
+
+@media (max-width: 43.75rem) {
+    .prose dl {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+
+    .prose dd {
+        margin-bottom: 0.75rem;
+    }
+}
+
+/*DOCUMENTACIÓN FINAL (body.documentacion-final)
+   Todo lo de este bloque está acotado a esa clase para no alterar las demás páginas.*/
+
+/* Cada sección de texto se presenta como una tarjeta */
+.documentacion-final .inventory-area > .prose {
+    padding: 1.5rem 2rem;
+    background: var(--superficie);
+    border: 0.0625rem solid var(--borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra-suave);
+}
+
+.documentacion-final .prose + .prose {
+    margin-top: 1.5rem;
+}
+
+/* Subapartados (h3 dentro de un h2): línea lateral que marca la jerarquía */
+.documentacion-final .prose > section {
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+    border-left: 0.1875rem solid var(--borde);
+}
+
+.documentacion-final .prose > section > h3:first-child {
+    margin-top: 0;
+}
+
+.documentacion-final .prose h4 {
+    margin: 1.25rem 0 0.5rem;
+    color: var(--oscuro);
+    font-size: 1rem;
+    font-weight: 750;
+}
+
+/*Ficha de datos del proyecto (lista de definiciones en dos columnas)*/
+
+.documentacion-final .ficha {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.75rem 1.5rem;
+    align-items: start;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: 0;
+}
+
+.documentacion-final .ficha dt {
+    padding-block: 0.45rem;
+    color: var(--principal-hover);
+    font-size: 0.8rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.documentacion-final .ficha dd {
+    margin: 0;
+    padding-block: 0.3rem;
+}
+
+/* Los autores reutilizan las píldoras de .team-list (se anula el estilo de .prose ul) */
+.documentacion-final .ficha .team-list {
+    margin: 0;
+    padding: 0;
+}
+
+.documentacion-final .ficha .team-list li {
+    margin: 0;
+}
+
+/*Índice del documento (en columnas)*/
+
+.documentacion-final .indice {
+    padding: 1rem 1.5rem;
+    background: var(--superficie-alt);
+    border: 0.0625rem solid var(--borde);
+    border-radius: 0.75rem;
+}
+
+.documentacion-final .indice > ul {
+    margin: 0;
+    columns: 20rem;
+    column-gap: 2.5rem;
+}
+
+.documentacion-final .indice > ul > li {
+    break-inside: avoid;
+    margin: 0.5rem 0;
+    font-weight: 650;
+}
+
+.documentacion-final .indice li li {
+    font-weight: 400;
+}
+
+/*Planificación: cada día es una tarjeta*/
+
+.documentacion-final .timeline {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.documentacion-final .timeline > li {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    background: var(--superficie-alt);
+    border: 0.0625rem solid var(--borde);
+    border-left: 0.25rem solid var(--principal);
+    border-radius: 0.75rem;
+}
+
+.documentacion-final .timeline > li > strong {
+    color: var(--oscuro);
+    font-size: 1.05rem;
+}
+
+.documentacion-final .timeline ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+}
+
+/*Lista larga de enlaces de componentes (en columnas)*/
+
+.documentacion-final .lista-enlaces {
+    columns: 22rem;
+    column-gap: 2rem;
+}
+
+.documentacion-final .lista-enlaces li {
+    break-inside: avoid;
+    overflow-wrap: anywhere;
+}
+
+/*Código en línea y bloques de código*/
+
+.documentacion-final .prose code {
+    padding: 0.1rem 0.4rem;
+    background: var(--principal-suave);
+    border: 0.0625rem solid var(--borde);
+    border-radius: 0.3rem;
+    color: var(--oscuro);
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+    font-size: 0.88em;
+}
+
+.documentacion-final .figura-codigo {
+    margin: 1.5rem 0;
+}
+
+.documentacion-final .prose pre {
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+    background: var(--oscuro);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    color: var(--blanco);
+    line-height: 1.5;
+    text-align: left;
+}
+
+.documentacion-final .prose pre code {
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    color: inherit;
+    font-size: 0.85rem;
+}
+
+.documentacion-final .figura-codigo figcaption {
+    margin-top: 0.6rem;
+    color: var(--texto-suave);
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+/*Niveles del árbol DOM: cada nivel se sangra un poco más*/
+
+.documentacion-final .niveles {
+    margin: 0 0 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.documentacion-final .niveles li {
+    margin: 0.4rem 0 0.4rem calc(var(--nivel, 0) * 1.25rem);
+    padding: 0.5rem 0.9rem;
+    background: var(--superficie);
+    border: 0.0625rem solid var(--borde);
+    border-left: 0.25rem solid var(--principal);
+    border-radius: 0.5rem;
+}
+
+.documentacion-final .niveles li:nth-child(2) { --nivel: 1; }
+.documentacion-final .niveles li:nth-child(3) { --nivel: 2; }
+.documentacion-final .niveles li:nth-child(4) { --nivel: 3; }
+.documentacion-final .niveles li:nth-child(5) { --nivel: 4; }
+.documentacion-final .niveles li:nth-child(6) { --nivel: 5; }
+
+/*Cuestionario: preguntas destacadas y respuestas en tarjetas*/
+
+.documentacion-final .pregunta {
+    padding: 0.75rem 1rem;
+    background: var(--principal-suave);
+    border-left: 0.25rem solid var(--principal);
+    border-radius: 0 0.5rem 0.5rem 0;
+    color: var(--oscuro);
+}
+
+.documentacion-final .prose article {
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--superficie-alt);
+    border: 0.0625rem solid var(--borde);
+    border-radius: 0.75rem;
+}
+
+.documentacion-final .prose article h3 {
+    margin-top: 0;
+}
+
+.documentacion-final .prose article > :last-child {
+    margin-bottom: 0;
+}
+
+/* Separación del enlace "Volver arriba / Ir atrás" respecto a la última tarjeta */
+.documentacion-final .prose .prose-volver {
+    margin-top: 2rem;
+}
+
+/*Adaptación de este bloque a pantallas pequeñas*/
+
+@media (max-width: 43.75rem) {
+    .documentacion-final .inventory-area > .prose {
+        padding: 1rem;
+    }
+
+    .documentacion-final .ficha {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+
+    .documentacion-final .ficha dd {
+        margin-bottom: 0.75rem;
+    }
+
+    .documentacion-final .niveles li {
+        margin-left: calc(var(--nivel, 0) * 0.5rem);
+    }
+
+    .documentacion-final .prose article {
+        padding: 1rem;
+    }
+}
+
+
 /*DISEÑO ADAPTABLE, Los ajustes se acumulan: cada bloque parte del anterior.*/
 
 /*Tablet (hasta 900 px)*/
