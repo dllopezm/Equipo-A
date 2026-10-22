@@ -449,13 +449,14 @@
             <article id="q-sintaxis" aria-labelledby="q-sintaxis-title">
                 <h3 id="q-sintaxis-title">Sobre la rigurosidad sintáctica (CE2D, CE2E)</h3>
                 <p class="pregunta"><em>¿Por qué un documento XHTML mal formado puede fallar al conectarse con una base de datos o sistema de inventario, mientras que HTML5 suele ser más permisivo con los errores del desarrollador?</em></p>
-                <p>Un documento XHTML mal formado puede fallar al conectarse con una base de datos o sistema de inventario ya que XHTML es muy poco permisivo al contrario que HTML, que es mucho más permisivo a la hora de programar que XHTML.</p>
+                <p>Un documento XHTML mal formado puede provocar errores porque XHTML exige una sintaxis estricta: las etiquetas deben cerrarse correctamente, los elementos deben anidarse de forma adecuada y los atributos deben escribirse siguiendo las reglas de XML. Si no se cumplen estas normas, el documento puede no procesarse correctamente y dificultar la comunicación con otros sistemas, como una base de datos o un sistema de inventario.
+                <p>En cambio, HTML5 es más permisivo y permite que los navegadores corrijan automáticamente muchos errores de sintaxis, por lo que la página puede seguir mostrándose aunque el código no sea perfecto.</p>
             </article>
 
             <article id="q-diseno" aria-labelledby="q-diseno-title">
                 <h3 id="q-diseno-title">Sobre el diseño y presentación (CE2G, CE2H)</h3>
                 <p class="pregunta"><em>¿Qué problemas surgirían al mantener la web del almacén si aplicaras los estilos visuales directamente con atributos HTML incrustados en lugar de utilizar un archivo CSS externo?</em></p>
-                <p>Los problemas que surgirían, entre otros, serían que si se quisieran cambiar los colores corporativos de la página habría que buscar entre las cientos de líneas para encontrar dentro del código los colores. Por otro lado, si estuviera en un CSS externo se cambian los colores desde el CSS y ya se cambian automáticamente y más fácil dentro de la página.</p>
+                <p>Los problemas que surgirían, entre otros, serían que si se quisieran cambiar los colores corporativos de la página habría que buscar entre las cientos de líneas para encontrar dentro del código los colores. Por otro lado si estuviera en un CSS externo se cambian los colores desde el CSS y ya se cambian automáticamente y más fácil dentro de la página, además de también aplicarse a otros sitios HTML si usan la misma hoja de estilos CSS.</p>
             </article>
 
             <p class="prose-volver"><a href="#inicio">Volver arriba</a> / <a href="../index0.html">Ir atrás</a></p>
